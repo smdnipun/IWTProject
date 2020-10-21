@@ -21,7 +21,7 @@
             if($row['Type']=='admin'){
                 session_start();
                 $_SESSION['username']=$row['User_name'];
-                header('Location: ../html/home.php');
+                header('Location: ../html/adminpanel.html');
             }
             if($row['Type']=='Seller'){
                 header('Location: ../html/seller.html');

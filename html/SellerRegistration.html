@@ -13,7 +13,7 @@
         <img src="../img/cart.png" class="logo"><br><br>
         <div class="center_form">
             <div>
-                <form action="" method="POST">
+                <form action="../php/sellerreg.php" method="POST">
                     <fieldset>
                         <legend>Registration</legend>
                         <div class="formtop">
@@ -22,27 +22,21 @@
                         <h4>Create Your Buyme Account</h4>
                         <div>
                             <label for="fname">Business Name :</label><br>
-                            <input type="text" id="fname" name="fname" size="48" Required><br><br>
+                            <input type="text" id="bane" name="bname" size="48" Required><br><br>
 
 
                             <label for="email">Business Email :</label><br>
-                            <input type="email" id="email" name="email" size="48" pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}" Required><br><br>
+                            <input type="email" id="bemail" name="bemail" size="48" pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}" Required><br><br>
                             
                             <label for="fname">Bank Name :</label><br>
-                            <input type="text" id="fname" name="fname" size="48" Required><br><br>
+                            <input type="text" id="bankName" name="bankName" size="48" Required><br><br>
 
                             <label for="fname">Branch :</label><br>
-                            <input type="text" id="fname" name="fname" size="48" Required><br><br>
+                            <input type="text" id="branch" name="branch" size="48" Required><br><br>
                             
                             <label for="pw">Account Number :</label><br>
-                            <input type="password" id="pwd" name="pwd" size="48"  pattern="[0-9].{8,}">
-                            
-                           
-                            <label for="fname"> Shipping Location :</label><br>
-                            <input type="text" id="fname" name="fname" size="48" Required><br><br>
-
-                            <label for="fname">Shipping Province :</label><br>
-                            <input type="text" id="fname" name="fname" size="48" Required><br><br>
+                            <input type="number" id="accNo" name="accNo" size="48"  pattern="[0-9].{8,}">
+                            <br>
                             
                             <input type="checkbox" id="agreeterms" name="agreeterms" value="agree" onclick="enableButton()">
                             <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
@@ -68,8 +62,6 @@
                     <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="../img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="../img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!-- <img src="./img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="./img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp; -->
                 </div>
             </div>
         </div>

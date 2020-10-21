@@ -5,7 +5,6 @@
     $dbname = "onlinemarketstore";
 
     $email = $_POST['email'];
-    //$pwd = $_POST['password'];
     $nic = $_POST['nic'];
     $telno= $_POST['telno'];
 

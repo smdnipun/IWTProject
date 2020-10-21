@@ -12,7 +12,7 @@
         <img src="../img/cart.png" class="logo"><br><br>
         <div class="center_form">
             <div>
-                <form action="" method="POST" onsubmit= 'return checkPassword()'>
+                <form action="../php/commonreg.php" method="post" onsubmit= 'return checkPassword()'>
                     <fieldset>
                         <legend>Registration</legend>
                         <div class="formtop">
@@ -27,26 +27,30 @@
                             <input type="text" id="lname" name="lname" size="48" placeholder="ex:-Paker"Required><br><br>
 
                             <label for="email">Email :</label><br>
-                            <input type="email" id="email" name="email" size="48" pattern="[a-z 0-9 .+-_%]+@+[a-z 0-9 +-_%]+\.[a-z]{2,3}"
+                            <input type="email" id="email" name="email" size="48" 
                             placeholder="ex:-peterpaker@gmail.com" Required><br><br>
+                            <!--pattern="[a-z 0-9 .+-_%]+@+[a-z 0-9 +-_%]+\.[a-z]{2,3}"-->
                             
                             <label for="nic">NIC :</label><br>
-                            <input type ="text" id="nic" name="nic" size="48" pattern="[0-9].{11}" placeholder="ex:-199554321452"Required><br><br>
+                            <input type ="text" id="nic" name="nic" size="48"  placeholder="ex:-199554321452"Required><br><br>
+                            <!--pattern="[0-9].{11}"-->
                             
                             <label for="pwd">Password :</label><br>
-                            <input type="password" id="pwd" name="pwd" size="48"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                            <input type="password" id="pwd" name="pwd" size="48"  
                             title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" Required><br><br>
+                            <!--pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"-->
                             
                             <label for="rpwd">Re-enter Password :</label><br>
-                            <input type="password" id="rpwd" name="rpwd" size="48" pattern=".{6,}" title="Six or more characters" Required><br><br>
+                            <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" Required><br><br>
+                            <!--pattern=".{6,}"-->
                             
                             <input type="checkbox" id="agreeterms" name="agreeterms" value="agree" onclick='enableButton()'>
                             <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
                         </div>
                         <div class="center">    
-                            <button type="submit" id="submitc" class="greenbtn btn" disabled>register as a customer</button>
+                            <button type="submit" id="submitc" class="greenbtn btn" name="action" value="customer" disabled>register as a customer</button>
                             <br><br>
-                            <button type="submit" id="submits" class="bluebtn btn" disabled>register as a seller</button>
+                            <button type="submit" id="submits" class="bluebtn btn" name="action" value="seller" disabled>register as a seller</button>
                         </div>
                     </fieldset>
                 </form>

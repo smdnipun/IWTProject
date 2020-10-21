@@ -17,7 +17,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "UPDATE staff SET password='".$pw."' WHERE email='".$email."'";
+    $sql = "UPDATE staff SET password='$pw' WHERE email='$email'";
     $result = $conn->query($sql);
     $conn->close();
 ?>

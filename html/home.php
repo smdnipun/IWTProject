@@ -29,8 +29,8 @@
             <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
-                <a href="./account.html"><button>My Account</button></a>&nbsp;&nbsp;
-                <button onclick="">SignOut</button>
+                <a href="./customerAccount.html"><button>My Account</button></a>&nbsp;&nbsp;
+                <button onclick="Signout()">SignOut</button>
             </div>
             <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <div></div>
