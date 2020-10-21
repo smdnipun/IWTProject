@@ -1,15 +1,8 @@
 <?php
-    $servername = "localhost";
-    $user = "root";
-    $password = "";
-    $dbname = "onlinemarketstore";
 
+    include "../php/config.php";
+    
     session_start();    
-
-    $conn = new mysqli($servername, $user, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     $fname=$_SESSION['Regfname'];
     $lname=$_SESSION['Reglname'];

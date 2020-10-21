@@ -1,19 +1,10 @@
 <?php
-    $servername = "localhost";
-    $user = "root";
-    $password = "";
-    $dbname = "onlinemarketstore";
+
+    include "../php/config.php";
 
     $email = $_POST['email'];
     $nic = $_POST['nic'];
     $telno= $_POST['telno'];
-
-    // Create connection
-    $conn = new mysqli($servername, $user, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     $sql = "SELECT * FROM staff WHERE email='".$email."' and NIC='".$nic."' and phone_number='".$telno."'";
     $result = $conn->query($sql);

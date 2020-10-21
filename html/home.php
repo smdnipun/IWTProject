@@ -37,7 +37,7 @@
                     <a href="./login.html"><button>Login</button></a>
                 </div>
                 <div>
-                    <a href="./login.html"><button>SignUp</button></a>
+                    <a href="./commonregistration.html"><button>SignUp</button></a>
                 </div>
             </div>
         </div>
@@ -165,8 +165,6 @@
              document.getElementById("loginButtonContainer").style.display="none";
          }
         function Signout(){
-            var uname = '<?php session_destroy(); ?>'; 
-            window.location.href="login.html";
         }
     </script>
 

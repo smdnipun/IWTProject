@@ -1,18 +1,10 @@
 <?php
-    $servername = "localhost";
-    $user = "root";
-    $password = "";
-    $dbname = "onlinemarketstore";
+
+    include "../php/config.php";
 
     $email = $_POST['email'];
     $pwd=$_POST['password'];
 
-    // Create connection
-    $conn = new mysqli($servername, $user, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     $sql = "SELECT * FROM customer WHERE email='".$email."'";
     $result = $conn->query($sql);
