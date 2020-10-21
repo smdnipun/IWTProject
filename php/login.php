@@ -14,18 +14,21 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM staff WHERE email='".$email."'";
+    $sql = "SELECT * FROM customer WHERE email='".$email."'";
     $result = $conn->query($sql);
     while($row = mysqli_fetch_array($result)) {
         if($row['Password']==$pwd){
-            if($row['Type']=='admin'){
-                session_start();
-                $_SESSION['username']=$row['User_name'];
-                header('Location: ../html/adminpanel.html');
-            }
-            if($row['Type']=='Seller'){
-                header('Location: ../html/seller.html');
-            }
+            session_start();
+            $_SESSION['username']=$row['firstname'];
+            header('Location: ../html/home.php');
+            // if($row['Type']=='admin'){
+            //     session_start();
+            //     $_SESSION['username']=$row['User_name'];
+            //     header('Location: ../html/adminpanel.html');
+            // }
+            // if($row['Type']=='Seller'){
+            //     header('Location: ../html/seller.html');
+            // }
         }
         else{
             echo('Incorrect Credentials');

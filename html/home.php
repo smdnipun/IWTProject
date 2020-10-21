@@ -33,11 +33,12 @@
                 <button onclick="Signout()">SignOut</button>
             </div>
             <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
-                <div></div>
                 <div>
                     <a href="./login.html"><button>Login</button></a>
                 </div>
-                <div></div>
+                <div>
+                    <a href="./login.html"><button>SignUp</button></a>
+                </div>
             </div>
         </div>
         <div class="main">
@@ -163,6 +164,10 @@
              document.getElementById("username").innerHTML=uname;
              document.getElementById("loginButtonContainer").style.display="none";
          }
+        function Signout(){
+            var uname = '<?php session_destroy(); ?>'; 
+            window.location.href="login.html";
+        }
     </script>
 
     <script src="../js/slideshow.js"></script>
