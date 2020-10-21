@@ -56,66 +56,21 @@
             </div>
             <br>
             <div id="items">
-                <div class="category"> 
-                    <br>
-                    <a href="./electronics.html"><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
-                <div class="category">
-                    <br>
-                    <a href=""><img src="../img/greySquare.jpg" height="150" width="150"></a><br><br>
-                    Item
-                </div>
+                <?php
+                    include "../php/config.php";
+
+                    $sql = "SELECT * FROM item";
+                    $result = $conn->query($sql);
+                    while($row = mysqli_fetch_array($result)) {
+                        if($row['Category']=="Electronics"){
+                            echo "<div class='category'> 
+                                    <br>
+                                    <img src='../img/greySquare.jpg' height='150' width='150'><br><br>
+                                    ".$row['Item_Name']."
+                                    </div>";
+                        }
+                    }
+                ?>
             </div>
             <br>
         </div>

@@ -7,9 +7,9 @@
         <div>
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
-                <a href="addAdmin.html"><button>Add another Admin</button></a>
+                <a href="addstaff.html"><button>Add another employee</button></a>
                 <a href="complaints.html"><button>Complaints</button></a>
-                <a href="home.html"><button>SignOut</button></a>
+                <a href="home.php"><button>SignOut</button></a>
             </div>
         </div>
         <br>
@@ -22,6 +22,7 @@
             <br>
             <div>
                 <center>
+                    <h3>Users</h3>
                     <table id="table" border="1" width="100%">
                         <tr>
                             <td>
@@ -31,10 +32,86 @@
                                 Action
                             </td>
                         </tr>
+                        <?php
+                            include "../php/config.php";
+                            $sql = "SELECT * FROM customer";
+                            $result = $conn->query($sql);
+                            while($row = mysqli_fetch_array($result)) {
+                                echo "<tr>
+                                        <td>
+                                            User ID: ".$row['CID']."<br>
+                                            Name: ".$row['firstname']." ".$row['lastname']."<br>
+                                            Email: ".$row['Email']."
+                                        </td>
+                                        <td style='text-align: center'>
+                                            <button onclick='banUser(`Customer`,".$row['CID'].")'>Ban User</button>
+                                        </td>
+                                    </tr>";
+                            }
+                        ?>
+                    </table>
+                    <h3>Sellers</h3>
+                    <table id="table" border="1" width="100%">
+                        <tr>
+                            <td>
+                                Seller Detials
+                            </td>
+                            <td>
+                                Action
+                            </td>
+                        </tr>
+                        <?php
+                            include "../php/config.php";
+                            $sql = "SELECT * FROM seller";
+                            $result = $conn->query($sql);
+                            while($row = mysqli_fetch_array($result)) {
+                                echo "<tr>
+                                        <td>
+                                            Seller ID: ".$row['SID']."<br>
+                                            FullName: ".$row['FullName']."<br>
+                                            Email: ".$row['Email']."
+                                        </td>
+                                        <td style='text-align: center'>
+                                            <a href='banUser.html'><button onclick='banUser(`Seller`,".$row['SID'].")'>Ban User</button></a>
+                                        </td>
+                                    </tr>";
+                            }
+                        ?>
+                    </table>
+                    <h3>Staff</h3>
+                    <table id="table" border="1" width="100%">
+                        <tr>
+                            <td>
+                                Staff Detials
+                            </td>
+                            <td>
+                                Action
+                            </td>
+                        </tr>
+                        <?php
+                            include "../php/config.php";
+                            $sql = "SELECT * FROM staff";
+                            $result = $conn->query($sql);
+                            while($row = mysqli_fetch_array($result)) {
+                                echo "<tr>
+                                        <td>
+                                            Staff ID: ".$row['Staff_ID']."<br>
+                                            FullName: ".$row['User_name']."<br>
+                                            Email: ".$row['Email']."<br>
+                                            Type: ".$row['Type']."
+                                        </td>
+                                        <td style='text-align: center'>
+                                            <a href='banUser.html'><button onclick='banUser(`Staff`,".$row['Staff_ID'].")'>Ban Staff</button></a>
+                                        </td>
+                                    </tr>";
+                            }
+                        ?>
                     </table>
                 </center>
             </div>
         </div>
+        <br>
+        <br>
         <div class="bottomBar">
             <div style="text-align: center;justify-content: center;align-content: center;align-items: center;">
                 <br><br>
@@ -53,5 +130,28 @@
             </div>
         </div>
     </body>
-    <!--<script src="../js/setDummyData.js"></script>-->
+    <script>
+        function banUser(userType,id){
+            var table;
+            if(userType=="Staff"){
+                table="staff";
+            }else if(userType=="Customer"){
+                table="customer";
+            }else if(userType=="Seller"){
+                table="seller";
+            }
+            var deleteUser=`
+                <?php 
+                    include "../php/config.php";
+                    $sql = "DELETE FROM `++`WHERE staff_id=`+id+`";
+                    $result = $conn->query($sql);
+                    if ($conn->query($sql) === TRUE) {
+                        echo "<script>alert('Record deleted successfully');</script>";
+                      } else {
+                        echo "Error deleting record: " . $conn->error;
+                      }
+                    $conn->close();
+                ?>`;
+        }
+    </script>
 </html>

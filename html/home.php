@@ -29,8 +29,8 @@
             <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
-                <a href="./customerAccount.html"><button>My Account</button></a>&nbsp;&nbsp;
-                <button onclick="Signout()">SignOut</button>
+                <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
+                <button onclick="">SignOut</button>
             </div>
             <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <div>
@@ -76,7 +76,7 @@
             <div id="items">
                 <div class="category"> 
                     <br>
-                    <a href="./electronics.html" target="blank"><img style="border-radius: 50%;" src="../img/electronics.jpg" height="150" width="150"></a><br><br>
+                    <a href="./electronics.php" target="blank"><img style="border-radius: 50%;" src="../img/electronics.jpg" height="150" width="150"></a><br><br>
                     Electronics
                 </div>
                 <div class="category">
@@ -164,8 +164,6 @@
              document.getElementById("username").innerHTML=uname;
              document.getElementById("loginButtonContainer").style.display="none";
          }
-        function Signout(){
-        }
     </script>
 
     <script src="../js/slideshow.js"></script>

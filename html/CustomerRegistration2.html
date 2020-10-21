@@ -12,7 +12,7 @@
         <img src="../img/cart.png" class="logo"><br><br>
         <div class="center_form">
             <div>
-                <form action="" method="POST">
+                <form action="../php/registerCustomer.php" method="POST">
                     <fieldset>
                         <legend>Customer</legend>
                         <div class="formtop">
@@ -21,9 +21,7 @@
                         <h4>Enter Payment Details</h4>
                         <fieldset>
                             <div>
-                                <input type="radio" id="paymenttype1" name="paymenttype" value="Credit/Debit card" onclick='enableCardDetails()''>
-                                <label for="Credit/Debit card">Credit/Debit card</label><br>
-                                <fieldset id="carddetails" disabled style="border: none;">
+                                <fieldset id="carddetails" style="border: none;">
                                     <input type="radio" id="visa" name="cardtype" value="visa">
                                     <label for="visa">VISA</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
@@ -34,16 +32,16 @@
                                     <label for="american_express">American Express</label><br>
 
                                     <label for="cardno">Card Number :</label><br>
-                                    <input type="text" id="cardno" name="cardno" size="48" pattern="[0-9].{15,}" Required><br>
+                                    <input type="text" id="cardno" name="cardno" size="48" pattern="[0-9].{15,}" ><br>
                                 
                                     <label for="cardno">Card Expire Date :</label>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <label for="cvv">CVV :</label>
                                     <br>
-                                    <input type="text" placeholder="MM" id="expMonth" name="expMonth" size="2" pattern="[0-9].{1,2}" Required>
-                                    <input type="text" placeholder="YY" id="expYear" name="expYear" size="2" pattern="[0-9].{1,2}" Required>
+                                    <input type="text" placeholder="MM" id="expMonth" name="expMonth" size="2" pattern="[0-9].{1,2}" required>
+                                    <input type="text" placeholder="YY" id="expYear" name="expYear" size="2" pattern="[0-9].{1,2}" required>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="password" placeholder="CVV" id="cvv" name="cvv" size="3" pattern="[0-9].{2}" Required><br><br>
+                                    <input type="password" placeholder="CVV" id="cvv" name="cvv" size="3" pattern="[0-9].{2}" required><br><br>
                                 </fieldset>
                             </div>
                         </fieldset>

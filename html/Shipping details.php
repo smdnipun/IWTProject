@@ -66,17 +66,21 @@
                     $findUser="SELECT city from customer where CID=(SELECT CID from orders where OID=".$row['OID'].")";
                     $findUserResult = $conn->query($findUser);
                     while($city=mysqli_fetch_array($findUserResult)){
-                        $findDeliveryDetails="SELECT * from deliveryperson where OID=".$row['OID'];
+                        $findDeliveryDetails="SELECT * from assigneddelivery where OID=".$row['OID'];
                         $findDeliveryResults=$conn->query($findDeliveryDetails);
                         while($details=mysqli_fetch_array($findDeliveryResults)){
-                            echo "<tr>
-                                <td>".$row['OID']."</td>
-                                <td>".$row['Item_number']."</td>
-                                <td>".$row['Quantity']."</td>
-                                <td>".$city['city']."</td>
-                                <td>".$details['User_name']."</td>
-                                <td>".$details['Vehical_No']."</td>
-                            </tr>";
+                            $findDeliveryPerson="SELECT * from deliveryperson where DP_ID=".$details['DP_ID'];
+                            $findDeliveryPersonResult=$conn->query($findDeliveryPerson);
+                            while($person=mysqli_fetch_array($findDeliveryPersonResult)){
+                                echo "<tr>
+                                    <td>".$row['OID']."</td>
+                                    <td>".$row['Item_number']."</td>
+                                    <td>".$row['Quantity']."</td>
+                                    <td>".$city['city']."</td>
+                                    <td>".$person['User_name']."</td>
+                                    <td>".$person['Vehical_No']."</td>
+                                </tr>";
+                            }
                         }
                     }
                 }
