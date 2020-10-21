@@ -12,11 +12,11 @@
         <img src="../img/cart.png" class="logo"><br><br>
         <div class="center_form">
             <div>
-                <form action="" method="POST">
+                <form action="../php/cutomerdetails.php" method="POST">
                     <fieldset>
                         <legend>Customer</legend>
                         <div class="formtop">
-                            Welcome<span id="username">[username]!</span><br>
+                            Welcome<br>
                         </div>
                         <h4>Enter Shipping Details</h4>    
                         <div>
@@ -34,7 +34,7 @@
                             <input type="text" id="state" name="state" size="20" Required><br><br>
 
                             <label for="telno">Telephone :</label><br>
-                            <input type ="tel" id="telno" name="telno" pattern="[0-9]{11}" size="48"placeholder="94712345678" Required><br><br>
+                            <input type ="tel" id="telno" name="telno"  size="48"placeholder="94712345678" Required><br><br><!--pattern="[0-9]{11}"-->
 
                             <input type="checkbox" id="agreesd" name="agreesd" value="agree" onclick='enableButton()'>
                             <label for="agreeshipping">By clicking,I agree that the Shipping details are correct.</label><br><br>
