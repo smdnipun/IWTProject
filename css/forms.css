@@ -32,6 +32,7 @@ a{
 /*form*/
 fieldset {
     background-color: #fff;
+    border-radius: 10px;
 }
 legend {
     background-color: gray;
@@ -39,20 +40,18 @@ legend {
 }
 input {
     margin: 5px;
+    border-radius:5px;
 }
 .center_form{
     padding-left: 550px; 
     padding-right: 550px;
-
 }
-.formtop
-{
+.formtop{
     text-align:center;
     font-weight: bolder;
     font-size: 20px;
 }
-.center
-{
+.center{
     text-align:center;
 }
 
@@ -82,14 +81,20 @@ input {
     font-size: 14px;
     text-transform: uppercase;
 }
-.btn:active 
+.greenbtn:active 
 {
   background-color: #3e8e41;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 5px #666666;
   transform: translateY(4px);
 }
+.bluebtn:active 
+{
+  background-color: #0000ff;
+  box-shadow: 0 5px #666666;
+  transform: translateY(4px);/*for a 2d look*/
+}
 
-/*links
+/*links*/
 .link:link {
     color: blue;
 }
@@ -101,7 +106,7 @@ input {
 }
 .link:active {
     color: blueviolet;
-} */
+} 
 
 .logo{
     padding-left: 20px;
