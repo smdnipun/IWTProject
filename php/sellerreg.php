@@ -16,7 +16,6 @@
     $branch=$_POST['branch'];
     $accountNumber=$_POST['accNo'];
 
-
     $sql = "INSERT INTO seller (SID,FullName,NIC,Email,Password,Phonenumber,Business_name,B_Email,Bank,Branch,AccountNo) 
     VALUES ('','$fname $lname','$nic','$email','$pw','$phone','$bname','$bemail','$bankName','$branch','$accountNumber')";
 

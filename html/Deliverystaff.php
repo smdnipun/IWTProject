@@ -7,8 +7,6 @@
         <script src="../js/notAvaliabale.js"> </script> 
         
     </head>
-
-   
     <body>
         
         <div class="topBar">

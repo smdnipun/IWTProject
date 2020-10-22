@@ -53,13 +53,13 @@
                         <label for="newpwd">New password :</label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="password" id="newpwd" name="newpwd"  
-                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" Required></input>
-                        <!--pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"--> <br><br>
+                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" Required
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"></input> <br><br>
 
                         <label for="reenterpwd">Re-enter new password :</label>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="password" id="newrpwd" name="reenterpwd" Required ></input> 
-                        <!--pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"--><br><br>
+                        <input type="password" id="newrpwd" name="reenterpwd" Required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"></input> 
+                        <br><br>
                     </fieldset>
 
                     <button type="submit" id="delete" name="action" value="delete">Delete Account</button>&nbsp;&nbsp;&nbsp;&nbsp;
