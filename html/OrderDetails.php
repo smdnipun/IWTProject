@@ -5,8 +5,6 @@
         <link rel="stylesheet" type="text/css" href="../css/main.css">
         <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">
         <script src="../js/notAvaliabale.js"> </script>
-        
-          
     </head>
     
     <body>
@@ -28,9 +26,9 @@
             <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
              
             
-                  <a href="Shipping details.html" ><button>Shipping</button></a>
+                  <a href="Shippingdetails.php" ><button>Shipping</button></a>
                   <br><br>
-                  <a href="Delivery staff.html" ><button>Staff</button></a>
+                  <a href="Deliverystaff.php" ><button>Staff</button></a>
                   <br><br>
  
                 <button onclick="notAvailableAlert()">Sign out</button>
@@ -46,7 +44,6 @@
 			
 			
 		<table id="order" border=1 >
-				
 	
 		<tr>
             <th>OID</th>
@@ -56,9 +53,12 @@
             <th>Location</th> 
             <th>Price and shipping cost </th> 
             <th>Order status</th> 
-		</tr>
-            </table>
-            </center>		
+        </tr>
+        <?php
+
+        ?>
+        </table>
+        </center>		
             </div>
         </div>
         <div class="bottomBar">

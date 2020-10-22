@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <?php
+    session_start();
+  ?>
 <head>
 <title>Payment Handling</title>
 <link rel="stylesheet" type="text/css" href="../CSS/PaymentHandling.css" >
@@ -18,7 +21,7 @@
     </div>
   </div>
   <div>
-	<button class="button1"><b>Sign Out</</b></button>
+	<button class="button1"><b>Sign Out</b></button>
 	<button class="button2"><b>My Account</b></button>
   </div>
 </div>   
@@ -32,8 +35,10 @@
 <br><br><br>
 
 <center>
-  <h2><b>[Payment Handler Name]</b></h2>
-  <h3>(Email Address)</h3>
+  <?php
+    echo "<h2><b>".$_SESSION['username']."<b></h2>
+            <h3><b>".$_SESSION['email']."</b></h2>";
+  ?>
 </center>
 
 <br><br><br>
@@ -41,7 +46,6 @@
 <div class="box2">
    <button class="button3"><a href="PaymentDetails.html"><h2><b>Payment Details<b></h2></a></button>
    <button class="button4"><a href="RefundMoney.html"><h2><b>Refund Money<b></h2></a></button>
-   <button class="button5" onclick="myfunction()"><h2><b>Pay The Seller<b></h2></button>
 </div>
 
 <br>

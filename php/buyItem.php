@@ -1,7 +1,22 @@
 <?php
+    session_start();
+
+    include "../php/config.php";
+
     $itemId = $_POST['itemD'];
     $quantity = $_POST['qunatity'];
-    $test = $_POST['price'];
+    $unitprice = $_POST['price'];
+    $totalPrice = $unitprice*$quantity;
 
-    echo $test;
+    $cid = $_SESSION['CID'];
+
+    $addOrder = "INSERT INTO orders(OID,CID,TotalPrice) VALUES ('','$cid','$totalPrice')";
+    $addOrderResult = $conn->query($addOrder);
+    $oid= $conn->insert_id;
+
+    $addOrderItem = "INSERT INTO orderitem(id,Item_number,OID,Quantity) VALUES ('','$itemId','$oid','$quantity')";
+    $addOrderItemResult = $conn->query($addOrderItem);
+
+    echo "<script>alert('Purchased Succesfully')</script>";
+    header('Location: ../html/home.php');
 ?>
