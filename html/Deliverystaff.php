@@ -61,7 +61,11 @@
                             <td>".$row['User_name']."</td>
                             <td>".$row['Location']."</td>
                             <td>".$row['Vehical_No']."</td>
-                            <td><button onClick='deleteUser(".$row['DP_ID'].")'>Delete User</button>
+                            <td>
+                                <form action='../php/deleteDeliver.php' method='post'>
+                                    <button type='submit' name='id' value='".$row['DP_ID']."'>Delete User</button>
+                                </form>
+                            </td>
                         <tr>";
                 }
         ?>
@@ -94,7 +98,7 @@
             var deleteUser=`
                 <?php 
                     include "../php/config.php";
-                    $sql = "DELETE FROM  deliveryperson WHERE DP_ID=`+id+`";
+                    $sql = "DELETE FROM deliveryperson WHERE DP_ID=`+id+`";
                     $result = $conn->query($sql);
                     if ($conn->query($sql) === TRUE) {
                         echo "<script>alert('User Removed Successfully');</script>";

@@ -37,42 +37,11 @@
 <th>Quantity</th>
 <th>Payment</th>
 
-<tr>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
+<?php
 
-</tr>
-
-<tr>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-
-</tr>
-
-<tr>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-
-</tr>
-
-<tr>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-
-</tr>
-
+	
+	
+?>
 <tr>
 	<td colspan="4"><b><h3>Total</h3></b></td>
 	<td>          </td>

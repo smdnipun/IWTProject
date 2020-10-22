@@ -90,24 +90,24 @@
                 <td></td>
             </tr>
             <?php
-            include "../php/config.php";
+                include "../php/config.php";
 
-            $sql = "SELECT * FROM deliveryperson";
-            $result = $conn->query($sql);
-            while($row = mysqli_fetch_array($result)) {
-                    echo "<tr>
-                            <td>".$row['User_name']."</td>
-                            <td>".$row['Location']."</td>
-                            <td>
-                                <form action='../php/assignperson.php' method='post'>
-                                    ID:-<input type='text' size='2' name='personid' value='".$row['DP_ID']."' readonly='readonly'><br>
-                                    Order ID :- <input type='number' size='2' name='oid'><br>
-                                    <button type='submit'>Assign Person</button><br>
-                                <form>
-                            </td>
-                        <tr>";
-                }
-        ?>
+                $sql = "SELECT * FROM deliveryperson";
+                $result = $conn->query($sql);
+                while($row = mysqli_fetch_array($result)) {
+                        echo "<tr>
+                                <td>".$row['User_name']."</td>
+                                <td>".$row['Location']."</td>
+                                <td>
+                                    <form action='../php/assignperson.php' method='post'>
+                                        ID:-<input type='text' size='2' name='personid' value='".$row['DP_ID']."' readonly='readonly'><br>
+                                        Order ID :- <input type='number' size='2' name='oid'><br>
+                                        <button type='submit'>Assign Person</button><br>
+                                    <form>
+                                </td>
+                            <tr>";
+                    }
+            ?>
         </table>
         </center>		
             </div>

@@ -30,47 +30,32 @@
 
 <div class="CancelledOrders" id="tbl" style="border-style:groove; border-color:DarkBlue;">
 <table border="1" style width="100%">
-<th>Order No</th>
-<th>Item No</th>
-<th>Quantity</th>
-<th>Payment</th>
-<th>Refund Money</th>
+	<tr>
+		<th>Order No</th>
+		<th>Payment</th>
+		<th>Refund Money</th>
+	</tr>
+  <?php
+    include "../php/config.php";
 
-<tr>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><center><button style="background-color:#4885ED;" onclick="myfunction()">Refund Money</button></center></td>
+    $getOrders = "SELECT * FROM orders";
+    $getOrdersResult = $conn->query($getOrders);
 
-</tr>
-
-<tr>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><center><button style="background-color:#4885ED;" onclick="myfunction()">Refund Money</button></center></td>
-
-</tr>
-
-<tr>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><center><button style="background-color:#4885ED;" onclick="myfunction()">Refund Money</button></center></td>
-
-</tr>
-
-<tr>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><b>       </b></td>
-	<td><center><button style="background-color:#4885ED;" onclick="myfunction()">Refund Money</button></center></td>
-
-</tr>
+    while($row = mysqli_fetch_array($getOrdersResult)) {
+      if($row['Status']=='cancelled'){
+          echo "<tr>
+                  <td>".$row['OID']."</td>
+                  <td>".$row['TotalPrice']."</td>
+                  <td style='text-align:center'>
+                    <form action='../php/refund.php' method='post'>
+                      <input type='number' name='oid' value='".$row['OID']."' style='display:none'> <br>
+                      <button type='submit'>Refund Money</button>
+                    </form>
+                  </td>
+                </tr>";
+      }
+    }
+	?>
 </table></div>
 
 <br>

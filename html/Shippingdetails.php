@@ -28,9 +28,9 @@
             </div>
             <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 
-                <a href="Order details.html" ><button>Order</button></a>
+                <a href="Orderdetails.php" ><button>Order</button></a>
                 <br><br>
-                <a href="Delivery staff.html" ><button>Staff</button></a>
+                <a href="Deliverystaff.php" ><button>Staff</button></a>
                 <br><br>
                 <br>
                 <button onclick= "notAvailableAlert()">SignOut</button>
