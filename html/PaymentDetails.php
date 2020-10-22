@@ -19,7 +19,6 @@
   </div> 
   <div>
 	<form action="../php/logout.php"><button type="submit">SignOut</button></form>
-	<button class="button2"><b>My Account</b></button>
   </div> 
 </div>  
 
