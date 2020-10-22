@@ -1,10 +1,14 @@
 <!DOCTYPE html> 
 <html>
+    <?php
+        session_start();
+    ?>
     <head>
         <title>Customer Account</title>
         <link rel="stylesheet" type="text/css" href="../css/main.css">
         <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">   
         <link rel="stylesheet" type="text/css" href="../css/customer.css">      
+        <link rel="stylesheet" href="../css/table.css">
     </head>
     <body>
         <div class="topBar">
@@ -34,21 +38,35 @@
                 <img src="../img/cover2.jpg" class="cover">
                 <img src="../img/logo.png" height="100" width="100" class="propic">
                 <div class="right">
-                    <button><a href="edit_caccount.html">Edit account</a></button>
+                    <button><a href="edit_account.php">Edit account</a></button>
                 </div>
                 <br>
-                <p>[Account Name]</p>
-                <p>[email address]</p>
+                <p><?php echo $_SESSION['username'] ?></p>
+                <p><?php echo $_SESSION['email'] ?></p>
             </div><br>
-            <div class="left">
-                <!--have to be connect the database to -->
-                <p>All orders:<span> </span></p>
-                <p>Awaiting payment:<span> </span></p>
-                <p>Awaiting shipment:<span> </span></p>
-                <p>Awaiting delivery:<span> </span></p>
-                <p>Feedbacks:<span> </span></p>
-                <p>Disputes:<span> </span></p>
-            </div>
+
+            <table class="table" border ="1">
+                <tr>
+                    <td><b>Order Name</b></td>
+                    <td><b>Order ID</b></td> 
+                </tr>
+                <?php
+                    include "../php/config.php";
+
+                    $customerDetails = "SELECT * FROM orders where CID='".$_SESSION['CID']."'";
+                    $customerDetailsResult = $conn->query($customerDetails);
+                    while($row = mysqli_fetch_array($customerDetailsResult)) {
+                        $orderDetials = "SELECT * FROM item where Item_number=(SELECT Item_number from orderitem where OID=".$row['OID'].")";
+                        $orderDetialsResult = $conn->query($orderDetials);
+                        while($order = mysqli_fetch_array($orderDetialsResult)) {
+                            echo "<tr>
+                                    <td>".$order['Item_Name']."</td>
+                                    <td>".$row['OID']."</td>
+                                </tr>";
+                        }
+                    }
+                ?>
+            </table>
         </div>
         <div class="bottomBar">
             <div class="footer">

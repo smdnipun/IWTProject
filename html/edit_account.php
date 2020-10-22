@@ -35,7 +35,6 @@
                 <img src="../img/cover2.jpg" class="cover">
                 <img src="../img/logo.png" height="100" width="100" class="propic">
             </div><br><br>
-            <!--<button id="up_pro_pic">UPLOAD</button><br>-->
             <br>
             <div>
                 <form action="" method="POST">

@@ -17,6 +17,8 @@
         while($row = mysqli_fetch_array($searchUserResult)) {
             if($row['Password']==$pwd){
                 $_SESSION['username']=$row['firstname'];
+                $_SESSION['email']=$email;
+                $_SESSION['CID']=$row['CID'];
                 header('Location: ../html/home.php');
             }
             else{
