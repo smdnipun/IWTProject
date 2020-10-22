@@ -1,5 +1,8 @@
 <!DOCTYPE html> 
 <html>
+    <?php
+        session_start();
+    ?>
     <head>
         <title>Seller Account</title>
         <link rel="stylesheet" type="text/css" href="../css/main.css">
@@ -38,8 +41,8 @@
                     <button><a href="edit_caccount.html">Edit account</a></button>
                 </div>
                 <br>
-                <p>[Account Name]</p>
-                <p>[email address]</p>
+                <p><?php echo $_SESSION['username']; ?></p>
+                <p><?php echo $_SESSION['email']; ?></p>
             </div><br>
             <div class="left">
                 <!--have to be connect the database to -->

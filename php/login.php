@@ -9,6 +9,10 @@
 
     $searchUser = "SELECT * FROM customer WHERE email='".$email."'";
     $searchUserResult = $conn->query($searchUser);
+
+    $searchSeller = "SELECT * FROM seller WHERE email='".$email."'";
+    $searchSellerResult = $conn->query($searchSeller);
+
     if(mysqli_num_rows($searchUserResult)==1){
         while($row = mysqli_fetch_array($searchUserResult)) {
             if($row['Password']==$pwd){
@@ -16,34 +20,63 @@
                 header('Location: ../html/home.php');
             }
             else{
-                echo('Incorrect Credentials');
+                echo('<script>alert("Incorrect Credentials")</script>');
             }
         }
-    }else{
+    }else if(mysqli_num_rows($searchSellerResult)==1){
+        while($row = mysqli_fetch_array($searchSellerResult)) {
+            if($row['Password']==$pwd){
+                $_SESSION['username']=$row['FullName'];
+                $_SESSION['email']=$email;
+                header('Location: ../html/seller.php');
+            }
+            else{
+                echo('<script>alert("Incorrect Credentials")</script>');
+            }
+        }
+    }
+    else{
         $searchStaff = "SELECT * FROM staff WHERE email='".$email."'";
         $searchStaffResult = $conn->query($searchStaff);
-        while($row = mysqli_fetch_array($searchStaffResult)) {
-            if($row['Password']==$pwd){
-                if($row['Type']=='admin'){
 
-                    $_SESSION['username']=$row['User_name'];
-                    header('Location: ../html/adminpanel.php');
+        $searchDelivery = "SELECT * FROM deliveryperson WHERE email='".$email."'";
+        $searchDeliveryResult = $conn->query($searchDelivery);
+
+        if(mysqli_num_rows($searchStaffResult)==1){
+            while($row = mysqli_fetch_array($searchStaffResult)) {
+                if($row['Password']==$pwd){
+                    if($row['Type']=='admin'){
+    
+                        $_SESSION['username']=$row['User_name'];
+                        header('Location: ../html/adminpanel.php');
+                    }
+                    else if($row['Type']=='DeliveryM'){
+    
+                        $_SESSION['username']=$row['User_name'];
+                        header('Location: ../html/deliveryhandling.html');
+                    }
+                    else if($row['Type']=='PaymentH'){
+    
+                        $_SESSION['username']=$row['User_name'];
+                        header('Location: ../html/paymenthandling.html');
+                    }
+                    else{
+                        echo "err";
+                    }
+                }else{
+                    echo '<script>alert("Incorrect Credentials")</script>';
                 }
-                else if($row['Type']=='DeliveryM'){
-
+            }
+        }else if(mysqli_num_rows($searchDeliveryResult)==1){
+            while($row = mysqli_fetch_array($searchDeliveryResult)) {
+                if($row['Password']==$pwd){
                     $_SESSION['username']=$row['User_name'];
-                    header('Location: ../html/deliveryhandling.html');
-                }
-                else if($row['Type']=='PaymentH'){
-
-                    $_SESSION['username']=$row['User_name'];
-                    header('Location: ../html/paymenthandling.html');
+                    $_SESSION['email']=$email;
+                    header('Location: ../html/delivery person.php');
                 }
                 else{
-                    echo "err";
+                    echo('<script>alert("Incorrect Credentials")</script>');
                 }
-            }else{
-                echo '<script>alert("Incorrect Credentials")</script>';
             }
         }
     }

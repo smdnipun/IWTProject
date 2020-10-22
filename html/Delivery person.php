@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
     <head>
         <title>Delivery person</title>
@@ -39,8 +42,8 @@
                 <img src="../img/cover2.jpg" class="cover">
                 <img src="../img/logo.png" height="100" width="100" class="propic">
                     <br><br>
-                    <p>[Delivery person]</p> 
-                    <p>[Email address]</p> 
+                    <p>Delivery person</p>
+                    <p><?php echo $_SESSION['username']; ?></p>
                 </div>   
         <div class="main">
             <table border=1 >
@@ -52,18 +55,24 @@
                          
                 </tr>
                 <?php
-                
+
                     include "../php/config.php";
 
-                    $sql = "SELECT * FROM deliveryperson";
+                    $sql = "SELECT * FROM deliveryperson where email='".$_SESSION['email']."'";
+
                     $result = $conn->query($sql);
-                    while($row = mysqli_fetch_array($result)) {
-                        $getLocation="SELECT * FROM customer where CID=(SELECT CID FROM orders where OID=".$row['OID'].")";
-                        $getLocationResult = $conn->query($getLocation);
-                        while($location = mysqli_fetch_array($getLocationResult)) {
-                            echo "<tr>
-                                    <td>".$row['OID']."</td>
-                                    <td>".$location['City']."</td>";
+                    while($row = mysqli_fetch_array($result)){
+                        $getOrderId = "SELECT * FROM assigneddelivery where DP_ID=".$row['DP_ID']."";
+                        $getOrderIdResult = $conn->query($getOrderId);
+                        while($oid =mysqli_fetch_array($getOrderIdResult)){
+                            $getLocation = "SELECT * FROM customer where CID=(SELECT CID FROM orders where OID=".$oid['OID'].")";
+                            $getLocationResult = $conn->query($getLocation);
+                            while($location =mysqli_fetch_array($getLocationResult)){
+                                echo "<tr>
+                                        <td>".$oid['OID']."</td>
+                                        <td>".$location['City']."</td>
+                                    </tr>";
+                            }
                         }
                     }
                 ?>
