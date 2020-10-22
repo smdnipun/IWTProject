@@ -45,9 +45,9 @@
             <div class="covermain">
                 <img src="../img/cover2.jpg" class="cover">
                 <img src="../img/logo.png" height="100" width="100" class="propic">
-                <div class="right">
+                <!-- <div class="right">
                     <button><a href="edit_account.php">Edit account</a></button>
-                </div>
+                </div> -->
                 <br>
                 <p><?php echo $_SESSION['username']; ?></p>
                 <p><?php echo $_SESSION['email']; ?></p>

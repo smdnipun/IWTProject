@@ -43,7 +43,7 @@
         </div>
         <div class="main">
             <br>
-            <div id="slideShow">
+            <div id="slideShow"> <!--Reference - https://www.w3schools.com/howto/howto_js_slideshow.asp-->
                 <div class="slideshow-container">
 
                     <div class="mySlides fade">

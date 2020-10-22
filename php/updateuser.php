@@ -9,7 +9,7 @@
     $action=$_POST['action'];
 
     if($action=="delete"){
-      //$sql = "UPDATE seller SET password='$pw' WHERE email='$email'";
+      $sql = "DELETE FROM customer WHERE email='$email'";
     }
     else if($action=="update"){
       $checkForSeller = "SELECT * FROM seller where email='$email'";
