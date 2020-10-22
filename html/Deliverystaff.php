@@ -30,7 +30,7 @@
                 <br><br>
                 <a href="Orderdetails.php" ><button>Order</button></a>
                 <br><br>
-                <button onclick="notAvailableAlert()">SignOut</button>
+                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
         </div>
         <a href="deliveryhandling.html" ><button>Back</button></a>

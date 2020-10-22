@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/signedInUser.css">
+        <link rel="stylesheet" href="../css/table.css">
     </head>
     <body>
         <div class="topBar">
@@ -24,11 +25,43 @@
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
                 <a href="./account.html"><button>My Account</button></a>&nbsp;&nbsp;
-                <button onclick="">SignOut</button>
+                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
         </div>
         <div id="main" class="main">
-         </div>
+            <br>
+            <table border="1">
+                <tr>
+                    <th>Staff ID</th>
+                    <th>User Name</th>
+                    <th>NIC</th>
+                    <th>Email</th>
+                    <th>Phone number</th>
+                    <th>Password</th>
+                </tr>
+                <?php
+                    include "../php/config.php";
+
+                    $getStaffData = "SELECT * FROM staff";
+                    $getStaffDataResult = $conn->query($getStaffData);
+                    while($row = mysqli_fetch_array($getStaffDataResult)) {
+                        echo "<form>
+                                <tr>
+                                    <td>".$row['Staff_ID']."</td>
+                                    <td>".$row['User_name']."</td>
+                                    <td>".$row['NIC']."</td>
+                                    <td>".$row['Email']."</td>
+                                    <td>".$row['Phone_number']."</td>
+                                    <td>".$row['Password']."</td>
+                                    <td style='text-align: center'>
+                                        <button>Update User</button>
+                                    </td>
+                                </tr>";
+                    }
+                ?>
+            </table>
+            <br>
+        </div>
         <div class="bottomBar">
             <div style="text-align: center;justify-content: center;align-content: center;align-items: center;">
                 <br><br>

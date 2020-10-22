@@ -30,7 +30,7 @@
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
                 <button>My Account</button>&nbsp;&nbsp;
-                <button>SignOut</button>
+                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
         </div>
         <div class="main">

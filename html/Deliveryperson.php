@@ -32,7 +32,7 @@
             <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <br><br><br>
                 
-                <button onclick="notAvailableAlert()">SignOut</button>
+                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
         </div>
         <div class="main">

@@ -31,7 +31,7 @@
                   <a href="Deliverystaff.php" ><button>Staff</button></a>
                   <br><br>
  
-                <button onclick="notAvailableAlert()">Sign out</button>
+                  <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
         </div>
         

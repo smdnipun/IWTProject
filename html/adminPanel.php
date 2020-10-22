@@ -2,14 +2,15 @@
     <head>
         <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/adminPannel.css">
+        <link rel="stylesheet" href="../css/table.css">
     </head>
     <body>
         <div>
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
                 <a href="addstaff.html"><button>Add another employee</button></a>
-                <a href="complaints.html"><button>Complaints</button></a>
-                <a href="home.php"><button>SignOut</button></a>
+                <a href="updateuserdetails.php"><button>Update User Details</button></a>
+                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
         </div>
         <br>

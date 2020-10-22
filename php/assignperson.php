@@ -9,4 +9,6 @@
     $result = $conn->query($sql);
     echo $conn->error;
     $conn->close();
+
+    header('Location: ../html/Orderdetails.php');
 ?>

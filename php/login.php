@@ -64,6 +64,12 @@
                         $_SESSION['email']=$email;
                         header('Location: ../html/paymenthandling.php');
                     }
+                    else if($row['Type']=='DeliveryP'){
+    
+                        $_SESSION['username']=$row['User_name'];
+                        $_SESSION['email']=$email;
+                        header('Location: ../html/deliveryperson.php');
+                    }
                     else{
                         echo "err";
                     }
@@ -76,7 +82,7 @@
                 if($row['Password']==$pwd){
                     $_SESSION['username']=$row['User_name'];
                     $_SESSION['email']=$email;
-                    header('Location: ../html/delivery person.php');
+                    header('Location: ../html/deliveryperson.php');
                 }
                 else{
                     echo('<script>alert("Incorrect Credentials")</script>');

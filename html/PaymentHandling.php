@@ -21,7 +21,7 @@
     </div>
   </div>
   <div>
-	<button class="button1"><b>Sign Out</b></button>
+	<form action="../php/logout.php"><button type="submit" class="button1">SignOut</button></form>
   </div>
 </div>   
 
@@ -43,8 +43,8 @@
 <br><br><br>
 
 <div class="box2">
-   <button class="button3"><a href="PaymentDetails.html"><h2><b>Payment Details<b></h2></a></button>
-   <button class="button4"><a href="RefundMoney.html"><h2><b>Refund Money<b></h2></a></button>
+   <button class="button3"><a href="PaymentDetails.php"><h2><b>Payment Details<b></h2></a></button>
+   <button class="button4"><a href="RefundMoney.php"><h2><b>Refund Money<b></h2></a></button>
 </div>
 
 <br>

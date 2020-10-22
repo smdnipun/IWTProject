@@ -18,7 +18,7 @@
     </div>
   </div>
   <div>
-	<button class="button1"><b>Sign Out</b></button>
+	<form action="../php/logout.php"><button type="submit" class="button1">SignOut</button></form>
   </div>
 </div>  
 
