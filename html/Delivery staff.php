@@ -40,9 +40,7 @@
         <div class="main">
             <h1>Delivery staff</h1>
             <br>
-            <!--This text box use to search,without database-->
-            <!-- <input type="text" id="myInput" placeholder="Serach ID No.">
-            <br><br> -->
+          
 			
 		<table id="staff" border="1" >
 				
