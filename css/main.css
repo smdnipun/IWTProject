@@ -47,6 +47,7 @@ a{
     background-color: #4885ED;
     height: 140px;
     width: 100%;
+    bottom: 0px; 
 }
 
 .footer{

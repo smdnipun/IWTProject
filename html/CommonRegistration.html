@@ -28,21 +28,18 @@
 
                             <label for="email">Email :</label><br>
                             <input type="email" id="email" name="email" size="48" 
-                            placeholder="ex:-peterpaker@gmail.com" Required><br><br>
-                            <!--pattern="[a-z 0-9 .+-_%]+@+[a-z 0-9 +-_%]+\.[a-z]{2,3}"-->
+                            placeholder="ex:-peterpaker@gmail.com" Required pattern="[a-z 0-9 .+-_%]+@+[a-z 0-9 +-_%]+\.[a-z]{2,3}"><br><br>
                             
                             <label for="nic">NIC :</label><br>
-                            <input type ="text" id="nic" name="nic" size="48"  placeholder="ex:-199554321452"Required><br><br>
-                            <!--pattern="[0-9].{11}"-->
+                            <input type ="text" id="nic" name="nic" size="48"  placeholder="ex:-199554321452"Required pattern="[0-9].{11}"><br><br>
                             
                             <label for="pwd">Password :</label><br>
                             <input type="password" id="pwd" name="pwd" size="48"  
-                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" Required><br><br>
-                            <!--pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"-->
+                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" Required
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"><br><br>
                             
                             <label for="rpwd">Re-enter Password :</label><br>
-                            <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" Required><br><br>
-                            <!--pattern=".{6,}"-->
+                            <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" Required pattern=".{6,}"><br><br>
                             
                             <input type="checkbox" id="agreeterms" name="agreeterms" value="agree" onclick='enableButton()'>
                             <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
