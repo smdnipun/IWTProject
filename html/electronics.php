@@ -65,8 +65,10 @@
                         if($row['Category']=="Electronics"){
                             echo "<div class='category'> 
                                     <br>
+                                    <a href='item.php?itemID=".$row['Item_number']."'>
                                     <img src='../img/greySquare.jpg' height='150' width='150'><br><br>
-                                    ".$row['Item_Name']."
+                                    ".$row['Item_Name'].
+                                    "</a>
                                     </div>";
                         }
                     }

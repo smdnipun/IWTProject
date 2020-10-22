@@ -33,7 +33,7 @@
                 <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
                 <button onclick="">SignOut</button>
             </div>
-        </div>
+    </div>
         <div class="main">
             <div class="covermain">
                 <img src="../img/cover2.jpg" class="cover">
