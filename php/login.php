@@ -28,6 +28,7 @@
             if($row['Password']==$pwd){
                 $_SESSION['username']=$row['FullName'];
                 $_SESSION['email']=$email;
+                $_SESSION['SID']=$row['SID'];
                 header('Location: ../html/seller.php');
             }
             else{

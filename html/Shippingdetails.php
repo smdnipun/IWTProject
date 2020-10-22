@@ -41,7 +41,6 @@
         <center>
         <div class="main">
             <h1>Shipping details</h1> 
-               <!--This text box use to search,without database-->
             <input type="text" id="Shippingdetails" placeholder="Serach Order No. "> 
             <br><br>
 			

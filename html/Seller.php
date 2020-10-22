@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="../css/main.css">
         <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">   
         <link rel="stylesheet" type="text/css" href="../css/seller.css">   
-         
+        <link rel="stylesheet" href="../css/table.css">
     </head>
     <body>
         <div class="topBar">
@@ -44,15 +44,27 @@
                 <p><?php echo $_SESSION['username']; ?></p>
                 <p><?php echo $_SESSION['email']; ?></p>
             </div><br>
-            <div class="left">
-                <!--have to be connect the database to -->
-                <p>All orders:<span> </span></p>
-                <p>Number of item sold :<span> </span></p>
-                <p>Number Of active item :<span> </span></p>
-                <p>Number of inactive :<span> </span></p>
-                <p>Feedbacks:<span> </span></p>
-               
-            </div>
+            <table class="table" border ="1">
+                <tr>
+                    <td><b>Product Name</b></td>
+                    <td><b>Description</b></td>
+                    <td><b>Quantity</b></td> 
+                    <td><b>Unit Price</b></td>  
+                </tr>
+                <?php
+                    include "../php/config.php";
+
+                    $sellerDetails = "SELECT * FROM item where SID='".$_SESSION['SID']."'";
+                    $sellerDetailsResult = $conn->query($sellerDetails);
+                    while($row = mysqli_fetch_array($sellerDetailsResult)) {
+                        echo "<tr>
+                                <td>".$row['Item_Name']."</td>
+                                <td>".$row['Description']."</td>
+                                <td>".$row['Quantity']."</td>
+                                <td>".$row['Unit_Price']."</td>";
+                    }
+                ?>
+            </table>
         </div>
         <div class="bottomBar">
             <div class="footer">
