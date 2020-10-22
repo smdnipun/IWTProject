@@ -39,23 +39,74 @@
         <center>
         <div class="main">
             <h1>Order details </h1>
-            <input type="text" id="orderdetails" placeholder="Serach Order No.">
-           <br> <br>
-			
-			
+
 		<table id="order" border=1 >
 	
 		<tr>
             <th>OID</th>
             <th>Item No</th>
-            <th>CID</th> 
+            <th>Customer Name</th> 
             <th>Quantitty</th> 
             <th>Location</th> 
-            <th>Price and shipping cost </th> 
             <th>Order status</th> 
         </tr>
         <?php
+            include "../php/config.php";
 
+            $sql = "SELECT * FROM orderitem";
+            $result = $conn->query($sql);
+            while($row = mysqli_fetch_array($result)) {
+                $findUser="SELECT * from customer where CID=(SELECT CID from orders where OID=".$row['OID'].")";
+                $findUserResult = $conn->query($findUser);
+                while($customer=mysqli_fetch_array($findUserResult)){
+                    echo "<tr>
+                        <td>".$row['OID']."</td>
+                        <td>".$row['Item_number']."</td>
+                        <td>".$customer['firstname']." ".$customer['lastname']."</td>
+                        <td>".$row['Quantity']."</td>
+                        <td>".$customer['City']."</td>
+                        <td>    
+                            <form action='../php/orderstatus.php' method='post'>
+                                <input type='text' name='oid' size='2' value='".$row['OID']."' readonly='readonly' style='display:none;'>
+                                <select name='Orderstatus'>
+                                    <option value='shipped'>Shipped</option>
+                                    <option value='cancelled'>Cancelled</option>
+                                </select>
+                                <button type='submit'>Update Status</button>
+                            </form>
+                        </td>
+                    </tr>";
+                }
+            }
+            $conn->close();
+        ?>
+        </table>
+        <br><br>
+        <h3>Delivery Staff</h3>
+        <table border=1 >
+            <tr>
+                <td>Name</td>
+                <td>Location</td>
+                <td></td>
+            </tr>
+            <?php
+            include "../php/config.php";
+
+            $sql = "SELECT * FROM deliveryperson";
+            $result = $conn->query($sql);
+            while($row = mysqli_fetch_array($result)) {
+                    echo "<tr>
+                            <td>".$row['User_name']."</td>
+                            <td>".$row['Location']."</td>
+                            <td>
+                                <form action='../php/assignperson.php' method='post'>
+                                    ID:-<input type='text' size='2' name='personid' value='".$row['DP_ID']."' readonly='readonly'><br>
+                                    Order ID :- <input type='number' size='2' name='oid'><br>
+                                    <button type='submit'>Assign Person</button><br>
+                                <form>
+                            </td>
+                        <tr>";
+                }
         ?>
         </table>
         </center>		

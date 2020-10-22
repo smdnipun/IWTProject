@@ -26,9 +26,9 @@
             </div>
             <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
               
-                <a href="Shipping details.html"><button>Shipping</button></a>
+                <a href="Shippingdetails.php"><button>Shipping</button></a>
                 <br><br>
-                <a href="Order details.html" ><button>Order</button></a>
+                <a href="Orderdetails.php" ><button>Order</button></a>
                 <br><br>
                 <button onclick="notAvailableAlert()">SignOut</button>
             </div>
@@ -47,7 +47,8 @@
             <th>ID No</th>
             <th>Name</th> 
             <th>Address</th> 
-            <th>Vehical No.</th> 
+            <th>Vehical No.</th>
+            <th></th> 
         </tr>
         <?php
             include "../php/config.php";
@@ -59,7 +60,9 @@
                             <td>".$row['DP_ID']."</td>
                             <td>".$row['User_name']."</td>
                             <td>".$row['Location']."</td>
-                            <td>".$row['Vehical_No']."</td>";
+                            <td>".$row['Vehical_No']."</td>
+                            <td><button onClick='deleteUser(".$row['DP_ID'].")'>Delete User</button>
+                        <tr>";
                 }
         ?>
 			</table>		
@@ -86,4 +89,20 @@
             </div>
         </div>
     </body>
+    <script>
+        function deleteUser(id){
+            var deleteUser=`
+                <?php 
+                    include "../php/config.php";
+                    $sql = "DELETE FROM  deliveryperson WHERE DP_ID=`+id+`";
+                    $result = $conn->query($sql);
+                    if ($conn->query($sql) === TRUE) {
+                        echo "<script>alert('User Removed Successfully');</script>";
+                      } else {
+                        echo "Error deleting record: " . $conn->error;
+                      }
+                    $conn->close();
+                ?>`;
+        }
+    </script>
 </html>

@@ -62,7 +62,7 @@
     
                         $_SESSION['username']=$row['User_name'];
                         $_SESSION['email']=$email;
-                        header('Location: ../html/paymenthandling.html');
+                        header('Location: ../html/paymenthandling.php');
                     }
                     else{
                         echo "err";

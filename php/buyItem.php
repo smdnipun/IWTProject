@@ -10,7 +10,7 @@
 
     $cid = $_SESSION['CID'];
 
-    $addOrder = "INSERT INTO orders(OID,CID,TotalPrice) VALUES ('','$cid','$totalPrice')";
+    $addOrder = "INSERT INTO orders(OID,CID,TotalPrice) VALUES ('','$cid','$totalPrice','Active')";
     $addOrderResult = $conn->query($addOrder);
     $oid= $conn->insert_id;
 

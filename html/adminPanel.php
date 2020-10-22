@@ -2,6 +2,30 @@
     <head>
         <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/adminPannel.css">
+        <script>
+        function banUser(userType,id){
+            var table;
+            if(userType=="Staff"){
+                table="staff";
+            }else if(userType=="Customer"){
+                table="customer";
+            }else if(userType=="Seller"){
+                table="seller";
+            }
+            var deleteUser=`
+                <?php 
+                    include "../php/config.php";
+                    $sql = "DELETE FROM `+table+` WHERE staff_id=`+id+`";
+                    $result = $conn->query($sql);
+                    if ($conn->query($sql) === TRUE) {
+                        echo "<script>alert('User Removed Successfully');</script>";
+                      } else {
+                        echo "Error deleting record: " . $conn->error;
+                      }
+                    $conn->close();
+                ?>`;
+        }
+    </script>
     </head>
     <body>
         <div>
@@ -13,10 +37,6 @@
             </div>
         </div>
         <br>
-        <div style="text-align: center;">
-            <input type="text" placeholder="Enter username or id">
-            <button>Search</button>
-        </div>  
         <div class="main">
             <br>
             <br>
@@ -72,7 +92,7 @@
                                             Email: ".$row['Email']."
                                         </td>
                                         <td style='text-align: center'>
-                                            <a href='banUser.html'><button onclick='banUser(`Seller`,".$row['SID'].")'>Ban User</button></a>
+                                            <button onclick='banUser(`Seller`,".$row['SID'].")'>Ban User</button>
                                         </td>
                                     </tr>";
                             }
@@ -101,7 +121,7 @@
                                             Type: ".$row['Type']."
                                         </td>
                                         <td style='text-align: center'>
-                                            <a href='banUser.html'><button onclick='banUser(`Staff`,".$row['Staff_ID'].")'>Ban Staff</button></a>
+                                            <button onclick='banUser(`Staff`,".$row['Staff_ID'].")'>Ban Staff</button>
                                         </td>
                                     </tr>";
                             }
@@ -130,28 +150,4 @@
             </div>
         </div>
     </body>
-    <script>
-        function banUser(userType,id){
-            var table;
-            if(userType=="Staff"){
-                table="staff";
-            }else if(userType=="Customer"){
-                table="customer";
-            }else if(userType=="Seller"){
-                table="seller";
-            }
-            var deleteUser=`
-                <?php 
-                    include "../php/config.php";
-                    $sql = "DELETE FROM `++`WHERE staff_id=`+id+`";
-                    $result = $conn->query($sql);
-                    if ($conn->query($sql) === TRUE) {
-                        echo "<script>alert('User Removed Successfully');</script>";
-                      } else {
-                        echo "Error deleting record: " . $conn->error;
-                      }
-                    $conn->close();
-                ?>`;
-        }
-    </script>
 </html>

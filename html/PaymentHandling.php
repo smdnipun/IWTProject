@@ -22,7 +22,6 @@
   </div>
   <div>
 	<button class="button1"><b>Sign Out</b></button>
-	<button class="button2"><b>My Account</b></button>
   </div>
 </div>   
 
