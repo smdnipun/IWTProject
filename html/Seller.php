@@ -65,6 +65,46 @@
                     }
                 ?>
             </table>
+            <div>
+                <form>
+                    <label for="pname">Product Name </label>
+                    <input type="text" id="pname" name="pname" size="48" Required><br><br>
+
+                    <label for="desc">Description </label>
+                    <input type="text" id="desc" name="desc" size="48" Required><br><br>
+
+                    
+                    <label for="pr">Unit price </label>
+                    <input type="text" id="pr" name="pr" size="48" Required><br><br>
+                    
+
+                    <label for="quan">Quantitty </label>
+                    <input type="text" id="quan" name="quan" size="48" Required><br><br>
+
+                    <label for="category">Category </label>
+                    <select name="category" id="category">
+                        <option value="Electronics">Electronics</option>
+                        <option value="Jewelry & Watches">Jewelry & Watches</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Men's Fassion">Men's Fassion</option>
+                        <option value="Women's Fassion">Women's Fassion</option>
+                        <option value="Household Items">Household Items</option>
+                        <option value="Toys">Toys</option>
+                        <option value="Tools">Tools</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Hair">Hair</option>
+                        <option value="Fitness">Fitness</option>
+                        <option value="Shoes">Shoes</option>
+                        
+                    </select><br><br>
+                    <label for="img">Select image:</label>
+                    <input type="file" id="img" name="img" accept="image/*"><br><br>
+
+                    <div style="text-align: center;">
+                        <button type="submit" id="submitc">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="bottomBar">
             <div class="footer">

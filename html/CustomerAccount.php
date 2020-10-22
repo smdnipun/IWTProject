@@ -11,13 +11,13 @@
         <link rel="stylesheet" href="../css/table.css">
     </head>
     <body>
-        <div class="topBar">
-            <div class="logo">
-                <img src="../img/cart.png" height="100" width="100">
+    <div class="topBar">
+            <div style="padding-left: 20px;padding-top:30px;">
+                <a href="./home.html"><img src="../img/cart.png" height="100" width="100"></a>
             </div>
             <div class="searchBar">
                 <div></div>
-                <div class="searchBarRow">
+                <div class="searchBarRow" style="text-align: center;align-items: center;">
                     <div style="text-align: center;">
                         <input style="height:40px;" type="text" size="150">
                     </div>
@@ -25,12 +25,13 @@
                         <button class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
                     </div>
                 </div>
+                <div></div>
             </div>
-            <div class="welcome">
+            <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
-                <button>My Account</button>&nbsp;&nbsp;
-                <button>SignOut</button>
+                <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
+                <button onclick="">SignOut</button>
             </div>
         </div>
         <div class="main">
@@ -86,4 +87,13 @@
             </div>
         </div> 
     </body>
+    <script type="text/javascript">
+        var idr = '<?php echo isset($_SESSION['username']); ?>'; 
+        var uname = '<?php echo $_SESSION['username']; ?>'; 
+        console.log(idr);
+         if(idr==1){
+             document.getElementById("logOutButtonContainer").style.display="block";
+             document.getElementById("username").innerHTML=uname;
+         }
+    </script>
 </html>
