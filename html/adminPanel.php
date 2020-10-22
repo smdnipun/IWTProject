@@ -146,7 +146,7 @@
                     $sql = "DELETE FROM `++`WHERE staff_id=`+id+`";
                     $result = $conn->query($sql);
                     if ($conn->query($sql) === TRUE) {
-                        echo "<script>alert('Record deleted successfully');</script>";
+                        echo "<script>alert('User Removed Successfully');</script>";
                       } else {
                         echo "Error deleting record: " . $conn->error;
                       }

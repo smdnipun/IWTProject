@@ -8,7 +8,7 @@
     $pw=$_POST['password'];
 
 
-    $sql = "UPDATE staff SET password='$pw' WHERE email='$email'";
+    $sql = "UPDATE customer SET password='$pw' WHERE email='$email'";
     $result = $conn->query($sql);
     $conn->close();
 ?>
