@@ -86,6 +86,7 @@
                 }
                 else{
                     echo('<script>alert("Incorrect Credentials")</script>');
+                    header('Location: ../html/login.html');
                 }
             }
         }

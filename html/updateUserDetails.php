@@ -21,11 +21,19 @@
                 </div>
                 <div></div>
             </div>
-            <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
+            <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
-                <a href="./account.html"><button>My Account</button></a>&nbsp;&nbsp;
+                <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
                 <form action="../php/logout.php"><button type="submit">SignOut</button></form>
+            </div>
+            <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
+                <div>
+                    <a href="./login.html"><button>Login</button></a>
+                </div>
+                <div>
+                    <a href="./commonregistration.html"><button>SignUp</button></a>
+                </div>
             </div>
         </div>
         <div id="main" class="main">
@@ -45,18 +53,20 @@
                     $getStaffData = "SELECT * FROM staff";
                     $getStaffDataResult = $conn->query($getStaffData);
                     while($row = mysqli_fetch_array($getStaffDataResult)) {
-                        echo "<form>
+                        echo "<form action='../php/updatestaff.php' method='post'>
                                 <tr>
                                     <td>".$row['Staff_ID']."</td>
-                                    <td>".$row['User_name']."</td>
-                                    <td>".$row['NIC']."</td>
-                                    <td>".$row['Email']."</td>
-                                    <td>".$row['Phone_number']."</td>
-                                    <td>".$row['Password']."</td>
+                                    <td><input type='text' name='username' value='".$row['User_name']."'></td>
+                                    <td><input type='text' name='nic' value='".$row['NIC']."'></td>
+                                    <td><input type='text' name='email' value='".$row['Email']."'></td>
+                                    <td><input type='text' name='number' value='".$row['Phone_number']."'></td>
+                                    <td><input type='text' name='password' value='".$row['Password']."'></td>
                                     <td style='text-align: center'>
-                                        <button>Update User</button>
+                                        <button type='submit'>Update User</button>
                                     </td>
-                                </tr>";
+                                </tr>
+                                </form>";
+
                     }
                 ?>
             </table>
@@ -80,5 +90,4 @@
             </div>
         </div>
     </body>
-    <script src="../js/setDummyData.js"></script>
 </html>
