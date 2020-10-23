@@ -103,7 +103,7 @@
                 <a href="contact.html">Contact Us</a>&nbsp;|&nbsp;
                 <a href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
                 <a href="help.html">Help</a>&nbsp;|&nbsp;
-                <a href="abput.html">About</a>
+                <a href="about.html">About</a>
                 <div>
                     <br>
                     <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
