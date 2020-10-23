@@ -1,5 +1,5 @@
 function enableButton(){
-	if(document.getElementById("agreesd").checked){
+	if(document.getElementById("agreesd").checked==true){
 	    document.getElementById("submitc1").disabled=false;
 	}
 	else{

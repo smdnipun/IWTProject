@@ -9,7 +9,6 @@
         <link rel="stylesheet" type="text/css" href="../css/button.css">    
         <link rel="stylesheet" href="../css/signedInUser.css">
         <link rel="stylesheet" href="../css/table.css">
-        <script src="../js/notAvaliabale.js"> </script> 
     </head>
     
     <body>

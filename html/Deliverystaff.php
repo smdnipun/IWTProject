@@ -4,7 +4,6 @@
         <link rel="stylesheet" type="text/css" href="../css/table.css">
         <link rel="stylesheet" type="text/css" href="../css/main.css">
         <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">
-        <script src="../js/notAvaliabale.js"> </script> 
         
     </head>
     <body>

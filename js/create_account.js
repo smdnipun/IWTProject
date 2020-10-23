@@ -10,7 +10,7 @@ function checkPassword()
 
 function enableButton()
 {
-	if(document.getElementById("agreeterms").checked){
+	if(document.getElementById("agreeterms").checked==true){
         document.getElementById("submits").disabled=false;
         document.getElementById("submitc").disabled=false;
 	}

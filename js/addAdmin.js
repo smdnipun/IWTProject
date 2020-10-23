@@ -6,7 +6,7 @@ function checkPassword(){
 }
 
 function enableButon(){
-	if(document.getElementById("agreeterms").checked){
+	if(document.getElementById("agreeterms").checked==true){
 		document.getElementById("submita").disabled=false;
 	}
 	else{

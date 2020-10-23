@@ -155,5 +155,4 @@
              document.getElementById("loginButtonContainer").style.display="none";
          }
     </script>
-    <script src="../js/js1.js"></script>  
 </html>

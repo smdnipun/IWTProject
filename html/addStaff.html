@@ -78,15 +78,15 @@
                             title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"><br><br>
                             <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" -->
 
-                            <label for="rpw">Re-enter Password :</label><br>
+                            <label for="rpwd">Re-enter Password :</label><br>
                             <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" ><br><br>
                             <!-- pattern=".{6,}" -->
                             
                         </div>
-                        <input type="checkbox" id="agreeterms" name="agreeterms" onclick=""><!--enableButon()-->
+                        <input type="checkbox" id="agreeterms" name="agreeterms" onclick="enableButon()"><!--enableButon()-->
                             <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
                         <div class="center">    
-                            <button type="submit" id="submita" class="greenbtn btn">register as a admin</button>
+                            <button type="submit" id="submita" class="greenbtn btn" disabled>register as a admin</button>
                         </div>
                     </fieldset>
                 </form>
@@ -115,4 +115,5 @@
             </div>
         </div>
     </body>
+    <script src="../js/addAdmin.js"></script>
 </html>
