@@ -56,7 +56,7 @@
                     else if($row['Type']=='DeliveryM'){
     
                         $_SESSION['username']=$row['User_name'];
-                        header('Location: ../html/deliveryhandling.html');
+                        header('Location: ../html/deliveryhandling.php');
                     }
                     else if($row['Type']=='PaymentH'){
     
@@ -75,6 +75,7 @@
                     }
                 }else{
                     echo '<script>alert("Incorrect Credentials")</script>';
+                    header('Location: ../html/login.php');
                 }
             }
         }else if(mysqli_num_rows($searchDeliveryResult)==1){

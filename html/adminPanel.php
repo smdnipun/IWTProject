@@ -9,6 +9,7 @@
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
                 <a href="addstaff.html"><button>Add another employee</button></a>
+                <a href="feedback.php"><button>View Complaints</button></a>
                 <a href="updateuserdetails.php"><button>Update User Details</button></a>
                 <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
@@ -41,7 +42,9 @@
                                             Email: ".$row['Email']."
                                         </td>
                                         <td style='text-align: center'>
-                                            <button onclick='banUser(`Customer`,".$row['CID'].")'>Ban User</button>
+                                            <form action='../php/banuser.php?type=customer' method='post'>
+                                                <button type='submit' name='id' value='".$row['CID']."'>Ban User</button>
+                                            </form>
                                         </td>
                                     </tr>";
                             }
@@ -69,7 +72,9 @@
                                             Email: ".$row['Email']."
                                         </td>
                                         <td style='text-align: center'>
-                                            <button onclick='banUser(`Seller`,".$row['SID'].")'>Ban User</button>
+                                            <form action='../php/banuser.php?type=seller' method='post'>
+                                                <button type='submit' name='id' value='".$row['SID']."'>Ban User</button>
+                                            </form>
                                         </td>
                                     </tr>";
                             }
@@ -98,7 +103,9 @@
                                             Type: ".$row['Type']."
                                         </td>
                                         <td style='text-align: center'>
-                                            <button onclick='banUser(`Staff`,".$row['Staff_ID'].")'>Ban Staff</button>
+                                            <form action='../php/banuser.php?type=staff' method='post'>
+                                                <button type='submit' name='id' value='".$row['Staff_ID']."'>Ban User</button>
+                                            </form>
                                         </td>
                                     </tr>";
                             }
@@ -127,7 +134,7 @@
             </div>
         </div>
     </body>
-    <script>
+    <!-- <script>
         function banUser(userType,id){
             var table;
             if(userType=="Staff"){
@@ -139,16 +146,16 @@
             }
             var deleteUser=`
                 <?php 
-                    include "../php/config.php";
-                    $sql = "DELETE FROM `+table+` WHERE staff_id=`+id+`";
-                    $result = $conn->query($sql);
-                    if ($conn->query($sql) === TRUE) {
-                        echo "<script>alert('User Removed Successfully');</script>";
-                      } else {
-                        echo "Error deleting record: " . $conn->error;
-                      }
-                    $conn->close();
+                    // include "../php/config.php";
+                    // $sql = "DELETE FROM `+table+` WHERE staff_id=`+id+`";
+                    // $result = $conn->query($sql);
+                    // if ($conn->query($sql) === TRUE) {
+                    //     echo "<script>alert('User Removed Successfully');</script>";
+                    //   } else {
+                    //     echo "Error deleting record: " . $conn->error;
+                    //   }
+                    // $conn->close();
                 ?>`;
         }
-    </script>
+    </script> -->
 </html>

@@ -8,7 +8,7 @@
     </head>
        
     <body>
-        <div class="topBar">
+    <div class="topBar">
             <div style="padding-left: 20px;padding-top:30px;">
                 <img src="../img/cart.png" height="100" width="100">
             </div>
@@ -22,11 +22,14 @@
                         <button class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
                     </div>
                 </div>
-                <div></div>
             </div>
             <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
-                <br><br><br>
-                <button>SignOut</button>
+              
+                <a href="Shippingdetails.php"><button>Shipping</button></a>
+                <br><br>
+                <a href="Orderdetails.php" ><button>Order</button></a>
+                <br><br>
+                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
         </div>
        
@@ -37,8 +40,7 @@
                 <img src="../img/cover2.jpg" class="cover">
                 <img src="../img/logo.png" height="100" width="100" class="propic">
                     <br><br>
-                    <p>[Delivery manager]</p> 
-                    <p>[Email address]</p> 
+                    <p>Delivery manager</p> 
                 </div>   
             <br>
             <center>
@@ -47,9 +49,8 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="Shippingdetails.php"> <button  class="button">Shipping details</button></a>
             <br><br>  
-            <a href="Orderdetails.html" ><button  class="button">Order details</button></a>
+            <a href="Orderdetails.php" ><button  class="button">Order details</button></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="Feedback.html" ><button  class="button">Feedback</button></a>
             <br><br>
             </center>
             </div>

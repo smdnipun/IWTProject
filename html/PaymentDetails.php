@@ -2,26 +2,31 @@
 <html>
 <head>
 <title>Payment Details</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
 <link rel="stylesheet" type="text/css" href="../CSS/PaymentDetails.css" >
-
+<link rel="stylesheet" href="../css/signedInUser.css">  
 </head>
 <body>
 
-<div class="header">
-  <div style="padding-left: 20px;padding-top:20px;">
-    <img class="logo" src="../Img/cart.png" width="100px" height="100px">
-    <div class="searchbar">
-    <form>
-      <input type="text" name="search" class="searchbox">
-	  <button type="submit"><img src="../Img/search.png" width="20px" height="20px"></button>
-    <form>
-	</div>
-  </div> 
-  <div>
-	<form action="../php/logout.php"><button type="submit">SignOut</button></form>
-  </div> 
-</div>  
-
+<div class="topBar">
+            <div style="padding-left: 20px;padding-top:30px;">
+                <img src="../img/cart.png" height="100" width="100">
+            </div>
+            <div class="searchBar">
+                <div></div>
+                <div class="searchBarRow" style="text-align: center;align-items: center;">
+                    <div style="text-align: center;">
+                        <input style="height:40px;" type="text" size="150">
+                    </div>
+                    <div>
+                        <button class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
+                    </div>
+                </div>
+            </div>
+            <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
+                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
+            </div>
+        </div>
 <br>
 
 <h1>Payment Details</h1>
@@ -42,14 +47,14 @@
   $getOrderDetails = "SELECT * FROM orders";
   $getOrderDetailsResult = $conn->query($getOrderDetails);
   while($row = mysqli_fetch_array($getOrderDetailsResult)) {
-    $getItemDetails = "SELECT * FROM orderitem";
+    $getItemDetails = "SELECT * FROM orderitem WHERE OID=".$row['OID']."";
     $getItemDetailsResult = $conn->query($getItemDetails);
-    while($item = mysqli_fetch_array($getOrderDetailsResult)) {
+    while($item = mysqli_fetch_array($getItemDetailsResult)) {
       echo "<tr>
               <td>".$row['CID']."</td>
               <td>".$row['OID']."</td>
               <td>".$item['Item_number']."</td>
-              <td>".$item['Qunatity']."</td>
+              <td>".$item['Quantity']."</td>
               <td>".$row['TotalPrice']."</td>
             </tr>";
     }

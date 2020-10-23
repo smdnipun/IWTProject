@@ -27,9 +27,9 @@
             <?php
                 echo"<form action='../php/addReport.php' method='post'>
                     <lable for='topic'>Topic:</lable><br>
-                    <input type='text' size='150'><br>
+                    <input type='text' name='topic' size='150'><br>
                     <lable for='complaint'>Complaint:</lable><br>
-                    <textarea id='complaint' rows='10' cols='120'></textarea><br><br>
+                    <textarea name='complaint' rows='10' cols='120'></textarea><br><br>
                     <button type='submit'>Report</button>
                 </form>";
             ?>
