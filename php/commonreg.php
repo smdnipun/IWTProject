@@ -4,7 +4,7 @@
     $_SESSION['Reglname'] =$_POST['lname'];
     $_SESSION['Regnic'] = $_POST['nic'];
     $_SESSION['Regemail'] = $_POST['email'];
-    $_SESSION['Regnumber'] = 1234;
+    $_SESSION['Regnumber'] = $_POST['pno'];
     $_SESSION['Regpw']=$_POST['pwd'];
 
     if($_POST['action']=='seller'){
