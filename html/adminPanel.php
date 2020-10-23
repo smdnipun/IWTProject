@@ -134,28 +134,4 @@
             </div>
         </div>
     </body>
-    <!-- <script>
-        function banUser(userType,id){
-            var table;
-            if(userType=="Staff"){
-                table="staff";
-            }else if(userType=="Customer"){
-                table="customer";
-            }else if(userType=="Seller"){
-                table="seller";
-            }
-            var deleteUser=`
-                <?php 
-                    // include "../php/config.php";
-                    // $sql = "DELETE FROM `+table+` WHERE staff_id=`+id+`";
-                    // $result = $conn->query($sql);
-                    // if ($conn->query($sql) === TRUE) {
-                    //     echo "<script>alert('User Removed Successfully');</script>";
-                    //   } else {
-                    //     echo "Error deleting record: " . $conn->error;
-                    //   }
-                    // $conn->close();
-                ?>`;
-        }
-    </script> -->
 </html>

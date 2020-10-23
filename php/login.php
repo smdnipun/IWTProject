@@ -75,22 +75,12 @@
                     }
                 }else{
                     echo '<script>alert("Incorrect Credentials")</script>';
-                    header('Location: ../html/login.php');
-                }
-            }
-        }else if(mysqli_num_rows($searchDeliveryResult)==1){
-            while($row = mysqli_fetch_array($searchDeliveryResult)) {
-                if($row['Password']==$pwd){
-                    $_SESSION['username']=$row['User_name'];
-                    $_SESSION['email']=$email;
-                    header('Location: ../html/deliveryperson.php');
-                }
-                else{
-                    echo('<script>alert("Incorrect Credentials")</script>');
                     header('Location: ../html/login.html');
                 }
             }
         }
+        echo('<script>alert("Incorrect Credentials")</script>');
+        header('Location: ../html/login.html');
     }
     $conn->close();
 ?>

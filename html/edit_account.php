@@ -17,22 +17,33 @@
             </div>
             <div class="searchBar">
                 <div></div>
-                <div class="searchBarRow" style="text-align: center;align-items: center;">
-                    <div style="text-align: center;">
-                        <input style="height:40px;" type="text" size="150">
+                <form action="search.php" method="post">
+                    <div class="searchBarRow" style="text-align: center;align-items: center;">
+                        <div style="text-align: center;">
+                            <input style="height:40px;" type="text" name="search" size="150">
+                        </div>
+                        <div>
+                            <button type="submit" class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
+                        </div>
                     </div>
-                    <div>
-                        <button class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
-                    </div>
-                </div>
+                </form>
                 <div></div>
             </div>
             <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
+                <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
                 <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
-    </div>
+            <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
+                <div>
+                    <a href="./login.html"><button>Login</button></a>
+                </div>
+                <div>
+                    <a href="./commonregistration.html"><button>SignUp</button></a>
+                </div>
+            </div>
+        </div>
         <div class="main">
             <div class="covermain">
                 <img src="../img/cover2.jpg" class="cover">

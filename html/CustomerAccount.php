@@ -98,7 +98,7 @@
         <div class="bottomBar">
             <div class="footer">
                 <br><br>
-                <a href="report.html">Report</a>&nbsp;|&nbsp;
+                <a href="report.php">Report</a>&nbsp;|&nbsp;
                 <a href="faq.html">FAQ</a>&nbsp;|&nbsp;
                 <a href="contact.html">Contact Us</a>&nbsp;|&nbsp;
                 <a href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;

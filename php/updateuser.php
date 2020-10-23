@@ -7,7 +7,6 @@
     $userType = $_GET['user'];
     $email = $_SESSION['email'];
     $pw=$_POST['newpwd'];
-    $action=$_POST['action'];
 
     $checkForUser = "SELECT * FROM ".$userType." where email='$email'";
     $checkForUserResult = $conn->query($checkForUser);
@@ -28,6 +27,7 @@
         }
         else{
           echo '<script>alert("Updated Failed! Passwords do not match!")</script>'; 
+          header('Location: ../html/edit_account.php');
         }
       }
     }
