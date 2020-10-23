@@ -45,9 +45,9 @@
             <div class="covermain">
                 <img src="../img/cover2.jpg" class="cover">
                 <img src="../img/logo.png" height="100" width="100" class="propic">
-                <!-- <div class="right">
-                    <button><a href="edit_account.php">Edit account</a></button>
-                </div> -->
+                <div class="right">
+                    <button><a href="edit_account.php?user=seller">Edit account</a></button>
+                </div>
                 <br>
                 <p><?php echo $_SESSION['username']; ?></p>
                 <p><?php echo $_SESSION['email']; ?></p>
@@ -105,7 +105,7 @@
                         <label for="category">Category </label>
                         <select name="category">
                             <option value="Electronics">Electronics</option>
-                            <option value="Jewelry & Watches">Jewelry & Watches</option>
+                            <option value="JewelryWatches">Jewelry & Watches</option>
                             <option value="Sports">Sports</option>
                             <option value="MenFassion">Men's Fassion</option>
                             <option value="WomenFassion">Women's Fassion</option>

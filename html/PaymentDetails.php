@@ -37,13 +37,25 @@
 <th>Payment</th>
 
 <?php
+  include "../php/config.php";
 
-	
-	
+  $getOrderDetails = "SELECT * FROM orders";
+  $getOrderDetailsResult = $conn->query($getOrderDetails);
+  while($row = mysqli_fetch_array($getOrderDetailsResult)) {
+    $getItemDetails = "SELECT * FROM orderitem";
+    $getItemDetailsResult = $conn->query($getItemDetails);
+    while($item = mysqli_fetch_array($getOrderDetailsResult)) {
+      echo "<tr>
+              <td>".$row['CID']."</td>
+              <td>".$row['OID']."</td>
+              <td>".$item['Item_number']."</td>
+              <td>".$item['Qunatity']."</td>
+              <td>".$row['TotalPrice']."</td>
+            </tr>";
+    }
+  }
 ?>
-<tr>
-	<td colspan="4"><b><h3>Total</h3></b></td>
-	<td>          </td>
+
 </table></div>
 
 <br>

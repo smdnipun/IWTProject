@@ -11,16 +11,31 @@
             </div>
             <div class="searchBar">
                 <div></div>
-                <div class="searchBarRow" style="text-align: center;align-items: center;">
-                    <div style="text-align: center;">
-                        <input style="height:40px;" type="text" size="150" placeholder="Search">
+                <form action="search.php" method="post">
+                    <div class="searchBarRow" style="text-align: center;align-items: center;">
+                        <div style="text-align: center;">
+                            <input style="height:40px;" type="text" name="search" size="150">
+                        </div>
+                        <div>
+                            <button type="submit" class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
+                        </div>
                     </div>
-                    <div>
-                        <button class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
-                    </div>
-                </div>
+                </form>
+                <div></div>
             </div>
-            <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
+            <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
+                <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
+                <span id="username">[username]</span><br><br>
+                <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
+                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
+            </div>
+            <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
+                <div>
+                    <a href="./login.html"><button>Login</button></a>
+                </div>
+                <div>
+                    <a href="./commonregistration.html"><button>SignUp</button></a>
+                </div>
             </div>
         </div>
         <div class="main">
@@ -55,25 +70,31 @@
                 </div>
             </div>
             <br>
-            <div id="items">
+            
                 <?php
                     include "../php/config.php";
 
-                    $sql = "SELECT * FROM item";
-                    $result = $conn->query($sql);
+                    $search = $_POST['search'];
+
+                    $searchResult = "SELECT * from item WHERE Item_Name LIKE '%".$search."%'";
+                    $result = $conn->query($searchResult);
+
+                    if(mysqli_num_rows($result)==0){
+                        echo "<h1>No items found!</h1>";
+                    }
                     while($row = mysqli_fetch_array($result)) {
                         if($row['Category']=="Electronics"){
-                            echo "<div class='category'> 
+                            echo "<div id='items'>
+                            <div class='category'> 
                                     <br>
                                     <a href='item.php?itemID=".$row['Item_number']."'>
                                     <img src='../img/greySquare.jpg' height='150' width='150'><br><br>
                                     ".$row['Item_Name'].
                                     "</a>
-                                    </div>";
+                                    </div></div>";
                         }
                     }
                 ?>
-            </div>
             <br>
         </div>
         <div class="bottomBar">

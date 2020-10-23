@@ -18,5 +18,5 @@
     $addOrderItemResult = $conn->query($addOrderItem);
 
     //echo "<script>alert('Purchased Succesfully')</script>";
-    //header('Location: ../html/home.php');
+    header('Location: ../html/home.php');
 ?>

@@ -30,7 +30,6 @@
             <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
-                <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
                 <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
     </div>
@@ -41,30 +40,36 @@
             </div><br><br>
             <br>
             <div>
-                <form action="../php/updateUser.php" method="POST">
-                    <label for="change_pwd">Change Password</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+                <?php
+                    $userType= $_GET['user'];
+                    $deleteButton='';
+                    if($userType=='seller'){
+                        $deleteButton='display:none;';
+                    }
+                    echo "<form action='../php/updateUser.php?user=".$userType."' method='POST'>
+                        <label for='change_pwd'>Change Password</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
 
-                    <fieldset id="pwdreset" style="border: none;">
-                        <label for="oldpwd">Old Password :</label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="password" id="password" name="oldpwd" Required > </input> <br><br>
+                        <fieldset id='pwdreset' style='border: none;'>
+                            <label for='oldpwd'>Old Password :</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type='password' id='password' name='oldpwd' Required > </input> <br><br>
 
-                        <label for="newpwd">New password :</label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="password" id="newpwd" name="newpwd"  
-                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" Required
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"></input> <br><br>
+                            <label for='newpwd'>New password :</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type='password' id='newpwd' name='newpwd'  
+                            title='Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters' Required
+                            pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}'></input> <br><br>
 
-                        <label for="reenterpwd">Re-enter new password :</label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="password" id="newrpwd" name="reenterpwd" Required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"></input> 
-                        <br><br>
-                    </fieldset>
-
-                    <button type="submit" id="delete" name="action" value="delete">Delete Account</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button type="submit" id="submit" name="action" value="update">SUBMIT</button>
-                </form><br>
+                            <label for='reenterpwd'>Re-enter new password :</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type='password' id='newrpwd' name='reenterpwd' Required pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}'></input> 
+                            <br><br>
+                        </fieldset>
+                        <button type='submit'>SUBMIT</button>
+                    </form>
+                    <br>"
+                ?>
             </div>
         </div>
         <div class="bottomBar">

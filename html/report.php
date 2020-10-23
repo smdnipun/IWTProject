@@ -24,13 +24,15 @@
         <div class="main">
             <h1 style="text-align: center;">Report A Problem</h1>
             <br>
-            <form>
-                <lable for="topic">Topic:</lable><br>
-                <input type="text" id="topic" size="150"><br>
-                <lable for="complaint">Complaint:</lable><br>
-                <textarea id="complaint" rows="10" cols="120"></textarea><br><br>
-                <input type="submit" value="Report">
-            </form>
+            <?php
+                echo"<form action='../php/addReport.php' method='post'>
+                    <lable for='topic'>Topic:</lable><br>
+                    <input type='text' size='150'><br>
+                    <lable for='complaint'>Complaint:</lable><br>
+                    <textarea id='complaint' rows='10' cols='120'></textarea><br><br>
+                    <button type='submit'>Report</button>
+                </form>";
+            ?>
         </div>
         <footer>
             <div class="bottomBar">

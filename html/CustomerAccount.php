@@ -39,13 +39,13 @@
                 <img src="../img/cover2.jpg" class="cover">
                 <img src="../img/logo.png" height="100" width="100" class="propic">
                 <div class="right">
-                    <button><a href="edit_account.php">Edit account</a></button>
+                    <button><a href="edit_account.php?user=customer">Edit account</a></button>
                 </div>
                 <br>
                 <p><?php echo $_SESSION['username'] ?></p>
                 <p><?php echo $_SESSION['email'] ?></p>
             </div><br>
-
+            <h2>My Orders</h2>
             <table class="table" border ="1">
                 <tr>
                     <td><b>Order Name</b></td>
@@ -65,6 +65,32 @@
                                     <td>".$row['OID']."</td>
                                 </tr>";
                         }
+                    }
+                ?>
+            </table>
+            <br>
+            <h2>Added Feedbacks/Complaints</h2>
+            <table border ="1">
+                <tr>
+                    <th>Topic</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+                <?php
+                    include "../php/config.php";
+
+                    $feedbackDetails = "SELECT * FROM feedback where CID='".$_SESSION['CID']."'";
+                    $feedbackDetailsResult = $conn->query($feedbackDetails);
+                    while($row = mysqli_fetch_array($feedbackDetailsResult)) {
+                        echo "<form action='../php/deleteFeedback.php' method='post'>
+                                <tr>
+                                    <td>".$row['Topic']."</td>
+                                    <td>".$row['Description']."</td>
+                                    <td>
+                                        <button type='submit' name='fid' value='".$row['FID']."'>Delete</button>
+                                    </td>
+                                </tr>
+                            <form>";
                     }
                 ?>
             </table>
