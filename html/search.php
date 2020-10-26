@@ -70,7 +70,7 @@
                 </div>
             </div>
             <br>
-            
+
                 <?php
                     include "../php/config.php";
 
@@ -82,7 +82,7 @@
                     if(mysqli_num_rows($result)==0){
                         echo "<h1>No items found!</h1>";
                     }
-                    while($row = mysqli_fetch_array($result)) {
+                    while($row = mysqli_fetch_array($result)){
                         if($row['Category']=="Electronics"){
                             echo "<div id='items'>
                             <div class='category'> 

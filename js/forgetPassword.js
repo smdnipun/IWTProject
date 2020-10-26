@@ -9,14 +9,14 @@ function checkPassword(){
 	}
 }
 
-function enableButon(){
-	if(document.getElementById("agreeterms").checked){
-		document.getElementById("submitc1").disabled=false;
-	}
-	else{
-		document.getElementById("submitc1").disabled=true;	
-	}
-}
+// function enableButon(){
+// 	if(document.getElementById("agreeterms").checked){
+// 		document.getElementById("submitc1").disabled=false;
+// 	}
+// 	else{
+// 		document.getElementById("submitc1").disabled=true;	
+// 	}
+// }
 
 
 
