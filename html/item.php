@@ -47,12 +47,13 @@
 
                 $getItem="SELECT * FROM item where Item_number='".$_GET['itemID']."'";
                 $getItemResult = $conn->query($getItem);
+
                 while($row = mysqli_fetch_array($getItemResult)) {
                     echo "<form action='../php/buyitem.php' method='post'>
                     <h1>".$row['Item_Name']."</h1>
                     Price : Rs. <input type='number' name='price' value='".$row['Unit_Price']."' readonly='readonly'>
                     <br><br>Quantity : <input type='number' name='qunatity'><br><br>
-                    <button type='submit' name='itemD' value='".$_GET['itemID']."'>Purchase</button>";    
+                    <button type='submit' name='itemD' value='".$_GET['itemID']."'>Purchase</button></form>";    
                 }
             ?>
         </div>

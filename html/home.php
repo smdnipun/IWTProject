@@ -28,18 +28,20 @@
                 </form>
                 <div></div>
             </div>
+            <!-- this part only shows when user logged in-->
             <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
                 <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
                 <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
+            <!--this page is shown by default-->
             <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <div>
-                    <a href="./login.html"><button>Login</button></a>
+                    <a href="./login.html"><button class='button'><b>Login<b></button></a>
                 </div>
                 <div>
-                    <a href="./commonregistration.html"><button>SignUp</button></a>
+                    <a href="./commonregistration.html"><button><b>SignUp<b></button></a>
                 </div>
             </div>
         </div>
@@ -160,7 +162,6 @@
     <script type="text/javascript">
         var idr = '<?php echo isset($_SESSION['username']); ?>'; 
         var uname = '<?php echo $_SESSION['username']; ?>'; 
-        console.log(idr);
          if(idr==1){
              document.getElementById("logOutButtonContainer").style.display="block";
              document.getElementById("username").innerHTML=uname;

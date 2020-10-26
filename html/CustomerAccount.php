@@ -56,6 +56,7 @@
 
                     $customerDetails = "SELECT * FROM orders where CID='".$_SESSION['CID']."'";
                     $customerDetailsResult = $conn->query($customerDetails);
+                    
                     while($row = mysqli_fetch_array($customerDetailsResult)) {
                         $orderDetials = "SELECT * FROM item where Item_number=(SELECT Item_number from orderitem where OID=".$row['OID'].")";
                         $orderDetialsResult = $conn->query($orderDetials);

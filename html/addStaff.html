@@ -55,15 +55,13 @@
                             <input type="text" id="lname" name="lname" size="48"><br><br>
 
                             <label for="email">Email :</label><br>
-                            <input type="email" id="email" name="email" size="48" Required><br><br>
-                            <!-- pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}"  -->
+                            <input type="email" id="email" name="email" size="48" pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}" Required><br><br>
 
                             <label for="number">Number :</label><br>
                             <input type="number" id="number" name="number" size="10" Required><br><br>
 
                             <label for="nic">NIC :</label><br>
-                            <input type ="text" id="nic" name="nic" size="48"  Required><br><br>
-                            <!-- pattern="[0-9,vV].{10}" -->
+                            <input type ="text" id="nic" name="nic" size="48"  pattern="[0-9,vV].{10}"  Required><br><br>
 
                             <label for="type">Type :</label><br>
                             &nbsp;&nbsp;<select name="type" id="type">
@@ -75,15 +73,13 @@
                             <br><br>
                             <label for="pw">Password :</label><br>
                             <input type="password" id="pwd" name="pwd" size="48" 
-                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"><br><br>
-                            <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" -->
+                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"><br><br>
 
                             <label for="rpwd">Re-enter Password :</label><br>
                             <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" ><br><br>
-                            <!-- pattern=".{6,}" -->
                             
                         </div>
-                        <input type="checkbox" id="agreeterms" name="agreeterms" onclick="enableButon()"><!--enableButon()-->
+                        <input type="checkbox" id="agreeterms" name="agreeterms" onclick="enableButon()">
                             <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
                         <div class="center">    
                             <button type="submit" id="submita" class="greenbtn btn" disabled>register as a admin</button>

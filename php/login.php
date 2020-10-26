@@ -7,7 +7,7 @@
     $pwd=$_POST['password'];
 
 
-    $searchUser = "SELECT * FROM customer WHERE email='".$email."'";
+    $searchUser = "SELECT * FROM customer WHERE email='".$email."'"; 
     $searchUserResult = $conn->query($searchUser);
 
     $searchSeller = "SELECT * FROM seller WHERE email='".$email."'";
@@ -21,9 +21,6 @@
                 $_SESSION['CID']=$row['CID'];
                 header('Location: ../html/home.php');
             }
-            else{
-                echo('<script>alert("Incorrect Credentials")</script>');
-            }
         }
     }else if(mysqli_num_rows($searchSellerResult)==1){
         while($row = mysqli_fetch_array($searchSellerResult)) {
@@ -33,17 +30,11 @@
                 $_SESSION['SID']=$row['SID'];
                 header('Location: ../html/seller.php');
             }
-            else{
-                echo('<script>alert("Incorrect Credentials")</script>');
-            }
         }
     }
     else{
         $searchStaff = "SELECT * FROM staff WHERE email='".$email."'";
         $searchStaffResult = $conn->query($searchStaff);
-
-        $searchDelivery = "SELECT * FROM deliveryperson WHERE email='".$email."'";
-        $searchDeliveryResult = $conn->query($searchDelivery);
 
         if(mysqli_num_rows($searchStaffResult)==1){
             while($row = mysqli_fetch_array($searchStaffResult)) {
@@ -70,17 +61,15 @@
                         $_SESSION['email']=$email;
                         header('Location: ../html/deliveryperson.php');
                     }
-                    else{
-                        echo "err";
-                    }
                 }else{
                     echo '<script>alert("Incorrect Credentials")</script>';
                     header('Location: ../html/login.html');
                 }
             }
+        }else{
+            echo('<script>alert("Incorrect Credentials")</script>');
+            header('Location: ../html/login.html');
         }
-        echo('<script>alert("Incorrect Credentials")</script>');
-        header('Location: ../html/login.html');
     }
     $conn->close();
 ?>
