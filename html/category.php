@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
     <head>
         <link rel="stylesheet" href="../css/main.css">
@@ -68,7 +71,7 @@
                     </div>
 
                 </div>
-            </div>
+            </div>        
             <br>
             <div id="items">
                 <?php
@@ -111,5 +114,15 @@
             </div>
         </div>
     </body>
+    <script>
+    var idr = '<?php echo isset($_SESSION['username']); ?>'; 
+        var uname = '<?php echo $_SESSION['username']; ?>'; 
+         if(idr==1){
+             document.getElementById("logOutButtonContainer").style.display="block";
+             document.getElementById("username").innerHTML=uname;
+             document.getElementById("loginButtonContainer").style.display="none";
+         }
+    </script>
+
     <script src="../js/slideshow.js"></script>
 </html>

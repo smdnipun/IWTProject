@@ -47,7 +47,6 @@
         <center>
         <div class="main">
             <h1>Shipping details</h1> 
-            <input type="text" id="Shippingdetails" placeholder="Serach Order No. "> 
             <br><br>
 			
 			
