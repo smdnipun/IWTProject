@@ -1,12 +1,12 @@
-function enableusername(){
-	if(document.getElementById("chgun").checked){
-        console.log("test");
-        document.getElementById("chgusername").disabled=false;
-	}
-	else{
-        document.getElementById("chgusername").disabled=true;	
-	}
-}
+// function enableusername(){
+// 	if(document.getElementById("chgun").checked){
+//         console.log("test");
+//         document.getElementById("chgusername").disabled=false;
+// 	}
+// 	else{
+//         document.getElementById("chgusername").disabled=true;	
+// 	}
+// }
 
 function enablepassword(){
 	if(document.getElementById("chgpwd").checked){
