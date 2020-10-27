@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2020 at 02:03 PM
+-- Generation Time: Oct 27, 2020 at 04:42 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -36,6 +36,7 @@ CREATE TABLE `assigneddelivery` (
 --
 
 INSERT INTO `assigneddelivery` (`DP_ID`, `OID`) VALUES
+(6, 19),
 (6, 20),
 (6, 21);
 
@@ -52,7 +53,7 @@ CREATE TABLE `customer` (
   `NIC` varchar(12) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Password` varchar(100) NOT NULL,
-  `Phonenumber` int(10) NOT NULL,
+  `Phonenumber` int(11) NOT NULL,
   `Address` varchar(30) NOT NULL,
   `City` varchar(20) NOT NULL,
   `Cardtype` varchar(10) NOT NULL,
@@ -202,7 +203,7 @@ CREATE TABLE `seller` (
   `NIC` varchar(12) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Password` varchar(100) NOT NULL,
-  `Phonenumber` int(10) NOT NULL,
+  `Phonenumber` int(11) NOT NULL,
   `Business_name` varchar(20) NOT NULL,
   `B_Email` varchar(30) NOT NULL,
   `Bank` varchar(20) NOT NULL,
@@ -216,7 +217,7 @@ CREATE TABLE `seller` (
 
 INSERT INTO `seller` (`SID`, `FullName`, `NIC`, `Email`, `Password`, `Phonenumber`, `Business_name`, `B_Email`, `Bank`, `Branch`, `AccountNo`) VALUES
 (6, 'Senarath Samarasinghe', '602375896v', 'seller@gmail.com', 'Password#123', 123456789, 'Senarath Electronics', 'info@senarathe.com', 'Sampath Bank', 'Kandy', 2147483647),
-(7, 'Rohan Jayapala', '200102020203', 'rohan@gmail.com', 'Password#123', 1234, 'Rohan jewellery', 'test@test.com', 'Sampath', 'Colombo', 2147483647);
+(7, 'Rohan Jayapala', '200102020203', 'rohan@gmail.com', 'Password#123', 123456789, 'Rohan jewellery', 'test@test.com', 'Sampath', 'Colombo', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -334,12 +335,12 @@ ALTER TABLE `deliveryperson`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `FID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `FID` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `Item_number` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Item_number` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `orderitem`
 --
