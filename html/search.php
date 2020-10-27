@@ -7,7 +7,7 @@
     <body>
         <div class="topBar">
             <div style="padding-left: 20px;padding-top:30px;">
-                <a href="./home.html"><img src="../img/cart.png" height="100" width="100"></a>
+                <a href="./home.php"><img src="../img/cart.png" height="100" width="100"></a>
             </div>
             <div class="searchBar">
                 <div></div>
