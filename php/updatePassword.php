@@ -11,4 +11,5 @@
     $sql = "UPDATE customer SET password='$pw' WHERE email='$email'";
     $result = $conn->query($sql);
     $conn->close();
+    header('Location: ../html/login.html');
 ?>
