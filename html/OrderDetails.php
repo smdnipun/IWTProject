@@ -41,8 +41,7 @@
                 </div>
             </div>
         </div>
-        
-        <a href="deliveryhandling.html" ><button>Back</button></a>
+      
         <center>
         <div class="main">
             <h1>Order details </h1>

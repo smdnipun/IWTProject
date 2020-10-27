@@ -32,7 +32,7 @@
                 <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
         </div>
-        <a href="deliveryhandling.html" ><button>Back</button></a>
+      
         <center>
         <div class="main">
             <h1>Delivery staff</h1>
