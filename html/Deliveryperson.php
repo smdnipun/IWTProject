@@ -51,7 +51,6 @@
                 <tr>
                         <th>Order No</th>
                         <th>Location</th> 
-                         
                 </tr>
                 <?php
 
@@ -60,6 +59,7 @@
                     $sql = "SELECT * FROM deliveryperson where email='".$_SESSION['email']."'";
 
                     $result = $conn->query($sql);
+                    
                     while($row = mysqli_fetch_array($result)){
                         $getOrderId = "SELECT * FROM assigneddelivery where DP_ID=".$row['DP_ID']."";
                         $getOrderIdResult = $conn->query($getOrderId);

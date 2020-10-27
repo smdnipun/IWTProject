@@ -40,7 +40,8 @@
                 <img src="../img/cover2.jpg" class="cover">
                 <img src="../img/logo.png" height="100" width="100" class="propic">
                     <br><br>
-                    <p>Delivery manager</p> 
+                    <p>Delivery manager</p>
+                    <p><?php echo $_SESSION['username']; ?></p>
                 </div>   
             <br>
             <center>
